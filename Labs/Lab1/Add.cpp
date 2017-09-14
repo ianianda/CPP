@@ -3,19 +3,15 @@
 
 using namespace std;
 
-int main()
-{
-	int lab1::Add(int a, int b);
-}
-
 int lab1::Add(int a, int b)
 {
-	int c = a + b;
 
 	cout << "Enter two numbers to add\n";
 	cin >> a >> b;
 
-	cout << "Sum of entered numbers = " << c << endl;
+	int c = a + b;
 
-	return 0;
+	cout << "Sum of entered numbers = ";
+
+	return c;
 }
