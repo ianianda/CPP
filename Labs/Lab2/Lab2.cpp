@@ -24,10 +24,9 @@ namespace lab2
 		cout << setw(11) << left << "----------";
 		cout << "--------" << endl;
 
-			while (!in.eof()) {
-				if (in >> number) {
-
-				if (in.good()) {					
+		while (!in.eof()) {
+			if (in >> number) {
+				if (in.good()) {
 					cout << setw(12) << right << oct << number;
 					cout << setw(11) << right << dec << number; 			// 123
 					cout << setw(9) << right << hex << number << endl; 			// 7b
@@ -37,26 +36,39 @@ namespace lab2
 					in.clear();
 					in.ignore();
 				}
+				else if (in.eof()) {
+					break;
+				}
 			}
 		}
-		
 	}
 
 	void PrintMaxFloat(std::istream& in, std::ostream& out)
 	{
 		float number;
-		in >> number;
 
-		if (!in.eof()) {
-			cout << setw(6) << showpos << setw(14) << number << endl;
-
+		while (!in.eof()) {
+			if (in >> number) {
+				if (in.good()) {
+					cout << setw(5);
+					cout << showpos << number; //setprecision (2) << fixed << 1.2;
+					cout << setw(14) << right << showpoint << setprecision(3) << fixed << number << endl;
+					in.clear();
+				}
+				else if ((in.fail())) {
+					in.clear();
+					in.ignore();
+				}
+				else if (in.eof()) {
+					break;
+				}
+			}
 			if (number > maxValue) {
 				maxValue = number;
 			}
-
-			cout << setw(6) << left << "max:";
-			cout << setw(14) << showpos << setw(14) << maxValue << endl;
+			
 		}
-		return;
+		cout << setw(6) << left << "max:";
+		cout << setw(14) << showpos << setw(14) << maxValue << endl;
 	}
 }
