@@ -40,15 +40,14 @@ namespace lab2
 			}
 		}
 		
-		//return;
 	}
 
 	void PrintMaxFloat(std::istream& in, std::ostream& out)
 	{
 		float number;
-		cin >> number;
+		in >> number;
 
-		if (!cin.eof()) {
+		if (!in.eof()) {
 			cout << setw(6) << showpos << setw(14) << number << endl;
 
 			if (number > maxValue) {
