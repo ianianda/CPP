@@ -15,6 +15,7 @@ namespace lab2
 	void PrintIntegers(std::istream& in, std::ostream& out)
 	{
 		int number;
+		//bool flag = true;
 
 		cout << setw(12) << right << "oct";
 		cout << setw(11) << right << "dec";
@@ -28,19 +29,19 @@ namespace lab2
 
 			if (in.eof()) {
 				break;
-			}
-
+			} 
+			
 			if (in.fail()) {
 				in.clear();
-				in.ignore(LLONG_MAX, ' ');
+				in.ignore(LLONG_MAX, '\n');
 				continue;
 			}
-
-			cout << setw(12) << right << oct << number;
-			cout << setw(11) << right << dec << number; 
-			cout << uppercase << setw(9) << right << hex << number << endl;
-
+				cout << setw(12) << right << oct << number;
+				cout << setw(11) << right << dec << number;
+				cout << uppercase << setw(9) << right << hex << number << endl;
+				//in.clear();
 		}
+		
 		in.clear();
 	}
 
