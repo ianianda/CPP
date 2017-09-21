@@ -14,7 +14,7 @@ namespace lab2
 
 	void PrintIntegers(std::istream& in, std::ostream& out)
 	{
-		int number = NULL;
+		int number;
 
 		cout << setw(12) << right << "oct";
 		cout << setw(11) << right << "dec";
@@ -62,12 +62,12 @@ namespace lab2
 			}
 
 			cout << "     " << showpos << setw(14) << internal << showpoint << setprecision(3) << fixed << number << endl;
-			
+			if (number > maxValue) {
+				maxValue = number;
+			}
 		}
 
-		if (number > maxValue) {
-			maxValue = number;
-		}
+		
 
 		cout << setw(6) << left << "max:";
 		cout << setw(14) << showpos << setw(14) << maxValue << endl;
