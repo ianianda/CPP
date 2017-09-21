@@ -62,7 +62,7 @@ namespace lab2
 			}
 
 			cout << "     " << showpos << setw(14) << internal << showpoint << setprecision(3) << fixed << number << endl;
-
+			
 		}
 
 		if (number > maxValue) {
@@ -72,5 +72,6 @@ namespace lab2
 		cout << setw(6) << left << "max:";
 		cout << setw(14) << showpos << setw(14) << maxValue << endl;
 		in.clear();
+		cout << endl;
 	}
 }
