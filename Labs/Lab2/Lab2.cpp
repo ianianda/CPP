@@ -10,11 +10,11 @@ using namespace std;
 
 namespace lab2
 {
-	float maxValue = -999;
+	float maxValue = -LLONG_MAX;
 
 	void PrintIntegers(std::istream& in, std::ostream& out)
 	{
-		int number;
+		int number = NULL;
 
 		cout << setw(12) << right << "oct";
 		cout << setw(11) << right << "dec";
@@ -46,7 +46,7 @@ namespace lab2
 
 	void PrintMaxFloat(std::istream& in, std::ostream& out)
 	{
-		float number;
+		float number = NULL;
 
 		while (true) {
 			in >> number;
@@ -72,6 +72,5 @@ namespace lab2
 		cout << setw(6) << left << "max:";
 		cout << setw(14) << showpos << setw(14) << maxValue << endl;
 		in.clear();
-		cout << endl;
 	}
 }
