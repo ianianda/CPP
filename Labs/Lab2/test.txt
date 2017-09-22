@@ -1,9 +1,4 @@
-124.38478
-
-//ifstream fileopen;
-	//fileopen.open("test.txt", ios_base::in);
-//fileopen.close();
+124.44
+ifstream fileopen;
+	fileopen.open("test.txt", ios_base::in);
 	
-
-ios::fmtflags f(out.flags());
-		
