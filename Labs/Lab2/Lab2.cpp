@@ -28,7 +28,8 @@ namespace lab2
 		{
 			in >> number;
 
-			if ((number != NULL) && (in.eof())) {
+			if ((number != NULL) && (in.eof()))
+			{
 				out << setw(12) << right << setfill(' ') << oct << number;
 				out << setw(11) << dec << number;
 				out << setw(9) << hex << number << endl;
@@ -63,13 +64,14 @@ namespace lab2
 		while (!in.eof())
 		{
 			in >> number;
-			if ((number != NULL) && (in.eof())) {
+			if ((number != NULL) && (in.eof()))
+			{
 				out << setw(12) << right << setfill(' ') << oct << number;
 				out << setw(11) << dec << number;
 				out << setw(9) << hex << number << endl;
 				continue;
 			}
-			
+
 			if ((in.eof()) && (number == NULL))
 			{
 				break;
