@@ -14,12 +14,13 @@ namespace lab2
 
 	void PrintIntegers(std::istream& in, std::ostream& out)
 	{
+		ios::fmtflags f(out.flags);
 		out << setw(12) << uppercase << "oct";
 		out << setw(11) << "dec";
 		out << setw(9) << "hex" << endl;
 		out << setw(13) << setfill('-') << "-";
 		out << setw(11) << " ";
-		out << setw(9) << "-" << endl;
+		out << setw(9) << " " << endl;
 		string dump;
 		int number;
 
@@ -39,15 +40,16 @@ namespace lab2
 				continue;
 			}
 
-			out << setw(12) << oct << number;
+			out << setw(12) << setfill(' ') << oct << number;
 			out << setw(11) << dec << number;
 			out << setw(9) << hex << number << endl;
 		}
+		out.flags(f);
 	}
 
 	void PrintMaxFloat(std::istream& in, std::ostream& out)
 	{
-		std::ios_base::fmtflags ff;
+		ios::fmtflags f(out.flags());
 		float number = NULL;
 
 		while (true)
@@ -65,16 +67,17 @@ namespace lab2
 				continue;
 			}
 
-			out << setw(5) << " ";
-			out << showpos<< setw(20) << internal << showpoint << setprecision(3) << fixed << number << endl;
-
+			out << setw(5) << setprecision(3) << fixed << " ";
+			out << setw(15) << internal << showpos << number << endl;
 			if (number > maxValue)
 			{
 				maxValue = number;
 			}
 		}
 
-		out << "max: " << showpos << setw(14) << internal << maxValue << endl;
+		out << setw(5) << "max: ";
+		out << setw(15) << internal << showpos << maxValue << endl;
 		in.clear();
+		out.flags(f);
 	}
 }
