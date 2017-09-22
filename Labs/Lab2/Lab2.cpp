@@ -15,11 +15,11 @@ namespace lab2
 	void PrintIntegers(std::istream& in, std::ostream& out)
 	{
 
-		cout << setw(12) << right << "oct";
-		cout << setw(11) << right << "dec";
-		cout << setw(9) << right << "hex" << endl;
-		cout << setw(13) << left << "------------";
-		cout << setw(11) << left << "----------";
+		cout << setw(12) << uppercase << "oct";
+		cout << setw(11) << "dec";
+		cout << setw(9) << "hex" << endl;
+		cout << setw(13) << "------------";
+		cout << setw(11) << "----------";
 		cout << "--------" << endl;
 		string dump;
 		int number;
@@ -42,9 +42,9 @@ namespace lab2
 				continue;
 			}
 
-				cout << setw(12) << right << oct << number;
-				cout << setw(11) << right << dec << number;
-				cout << uppercase << setw(9) << right << hex << number << endl;
+				cout << setw(12) << oct << number;
+				cout << setw(11) << dec << number;
+				cout << setw(9) << hex << number << endl;
 		}
 	}
 
@@ -70,8 +70,6 @@ namespace lab2
 				maxValue = number;
 			}
 		}
-
-		
 
 		cout << "max: " << showpos << setw(14) << internal << maxValue << endl;
 		in.clear();
