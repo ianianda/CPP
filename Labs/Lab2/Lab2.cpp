@@ -47,22 +47,27 @@ namespace lab2
 
 	void PrintMaxFloat(std::istream& in, std::ostream& out)
 	{
+		std::ios_base::fmtflags ff;
 		float number = NULL;
 
-		while (true) {
+		while (true)
+		{
 			in >> number;
 
-			if (in.eof()) {
+			if (in.eof())
+			{
 				break;
 			}
 
-			if (in.fail()) {
+			if (in.fail())
+			{
 				in.clear();
 				continue;
 			}
 
 			cout << "     " << showpos << setw(14) << internal << showpoint << setprecision(3) << fixed << number << endl;
-			if (number > maxValue) {
+			if (number > maxValue)
+			{
 				maxValue = number;
 			}
 		}
