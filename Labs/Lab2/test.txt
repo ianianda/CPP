@@ -4,3 +4,6 @@
 	//fileopen.open("test.txt", ios_base::in);
 //fileopen.close();
 	
+
+ios::fmtflags f(out.flags());
+		
