@@ -14,7 +14,7 @@ int main()
 	//fileopen.open("test.txt", ios_base::in);
 
 	lab2::PrintIntegers(std::cin, std::cout);
-	lab2::PrintMaxFloat(std::cin, std::cout);
+	//lab2::PrintMaxFloat(std::cin, std::cout);
 	
 	//fileopen.close();
 	return 0;

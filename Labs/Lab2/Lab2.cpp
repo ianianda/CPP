@@ -14,37 +14,34 @@ namespace lab2
 
 	void PrintIntegers(std::istream& in, std::ostream& out)
 	{
-
 		cout << setw(12) << uppercase << "oct";
 		cout << setw(11) << "dec";
 		cout << setw(9) << "hex" << endl;
-		cout << setw(13) << "------------";
-		cout << setw(11) << "----------";
-		cout << "--------" << endl;
+		cout << setw(13) << setfill('-') << "-";
+		cout << setw(11) << " ";
+		cout << setw(9) << "-" << endl;
 		string dump;
 		int number;
 
-		while (!in.eof()) 
+		while (!in.eof())
 		{
-
 			in >> number;
 
-			if (in.eof()) 
+			if (in.eof())
 			{
 				break;
-			} 
-			
-			if (in.fail()) 
+			}
+
+			if (in.fail())
 			{
 				in.clear();
 				in >> dump;
-
 				continue;
 			}
 
-				cout << setw(12) << oct << number;
-				cout << setw(11) << dec << number;
-				cout << setw(9) << hex << number << endl;
+			cout << setw(12) << oct << number;
+			cout << setw(11) << dec << number;
+			cout << setw(9) << hex << number << endl;
 		}
 	}
 
@@ -61,7 +58,6 @@ namespace lab2
 
 			if (in.fail()) {
 				in.clear();
-				in.ignore(LLONG_MAX, ' ');
 				continue;
 			}
 
