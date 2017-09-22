@@ -18,7 +18,7 @@ namespace lab2
 		out << setw(12) << uppercase << "oct";
 		out << setw(11) << "dec";
 		out << setw(9) << "hex" << endl;
-		out << setw(13) << setfill('-') << "-";
+		out << setw(12) << setfill('-') << left << "-";
 		out << setw(11) << " ";
 		out << setw(9) << " " << endl;
 		string dump;
@@ -40,7 +40,7 @@ namespace lab2
 				continue;
 			}
 
-			out << setw(12) << setfill(' ') << oct << number;
+			out << setw(12) << right << setfill(' ') << oct << number;
 			out << setw(11) << dec << number;
 			out << setw(9) << hex << number << endl;
 		}
@@ -79,7 +79,6 @@ namespace lab2
 
 		out << setw(5) << "max: ";
 		out << setw(15) << internal << showpos << maxValue << endl;
-		in.clear();
 		out.flags(f);
 	}
 }
