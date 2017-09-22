@@ -36,7 +36,7 @@ namespace lab2
 				in.clear();
 				in >> dump;
 				continue;
-			} 
+			}
 			else if ((in.eof()) && (number == NULL))
 			{
 				break;
@@ -57,7 +57,7 @@ namespace lab2
 				number = NULL;
 				continue;
 			}
-			
+
 		}
 		out.flags(f);
 	}
