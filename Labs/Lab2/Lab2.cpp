@@ -49,7 +49,7 @@ namespace lab2
 	{
 		float number = NULL;
 
-		while (true)
+		while (!in.eof())
 		{
 			in >> number;
 
