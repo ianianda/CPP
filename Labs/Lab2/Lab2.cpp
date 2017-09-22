@@ -73,9 +73,8 @@ namespace lab2
 			in >> number;
 			if ((number != NULL) && (in.eof()))
 			{
-				out << setw(12) << right << setfill(' ') << oct << number;
-				out << setw(11) << dec << number;
-				out << setw(9) << hex << number << endl;
+				out << setw(5) << setprecision(3) << fixed << " ";
+				out << setw(15) << internal << showpos << number << endl;
 				in.clear();
 				in >> dump;
 				continue;

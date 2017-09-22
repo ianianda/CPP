@@ -1,2 +1,7 @@
-124.44 jsbd kjfljdfj oeiurj kjflk 9384903
+124.44 jsbd kjfljdfj
+9485048 oeiurj kjflk
+
+ifstream fileopen;
+	fileopen.open("test.txt", ios_base::in);
 	
+	fileopen.close();
