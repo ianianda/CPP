@@ -1,1 +1,6 @@
-124
+124.38478
+
+//ifstream fileopen;
+	//fileopen.open("test.txt", ios_base::in);
+//fileopen.close();
+	
