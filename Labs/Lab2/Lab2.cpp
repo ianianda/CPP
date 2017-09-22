@@ -48,6 +48,7 @@ namespace lab2
 	void PrintMaxFloat(std::istream& in, std::ostream& out)
 	{
 		float number = NULL;
+		string dump;
 
 		while (!in.eof())
 		{
@@ -61,6 +62,7 @@ namespace lab2
 			if (in.fail())
 			{
 				in.clear();
+				in >> dump;
 				continue;
 			}
 
