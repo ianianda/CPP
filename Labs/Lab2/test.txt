@@ -1,5 +1,2 @@
 124.44 jsbd kjfljdfj oeiurj kjflk 9384903
-ifstream fileopen;
-	fileopen.open("test.txt", ios_base::in);
-
 	

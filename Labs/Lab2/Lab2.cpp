@@ -54,6 +54,8 @@ namespace lab2
 				out << setw(9) << hex << number << endl;
 				in.clear();
 				in >> dump;
+				number = NULL;
+				continue;
 			}
 			
 		}
@@ -102,6 +104,8 @@ namespace lab2
 			{
 				maxValue = number;
 			}
+
+			number = NULL;
 		}
 
 		out << setw(5) << "max: ";
