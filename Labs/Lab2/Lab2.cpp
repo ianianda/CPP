@@ -14,8 +14,6 @@ namespace lab2
 
 	void PrintIntegers(std::istream& in, std::ostream& out)
 	{
-		int number;
-		//bool flag = true;
 
 		cout << setw(12) << right << "oct";
 		cout << setw(11) << right << "dec";
@@ -23,26 +21,31 @@ namespace lab2
 		cout << setw(13) << left << "------------";
 		cout << setw(11) << left << "----------";
 		cout << "--------" << endl;
+		string dump;
+		int number;
 
-		while (true) {
+		while (!in.eof()) 
+		{
+
 			in >> number;
 
-			if (in.eof()) {
+			if (in.eof()) 
+			{
 				break;
 			} 
 			
-			if (in.fail()) {
+			if (in.fail()) 
+			{
 				in.clear();
-				in.ignore(LLONG_MAX, '\n');
+				in >> dump;
+
 				continue;
 			}
+
 				cout << setw(12) << right << oct << number;
 				cout << setw(11) << right << dec << number;
 				cout << uppercase << setw(9) << right << hex << number << endl;
-				//in.clear();
 		}
-		
-		in.clear();
 	}
 
 	void PrintMaxFloat(std::istream& in, std::ostream& out)
@@ -70,8 +73,7 @@ namespace lab2
 
 		
 
-		cout << setw(6) << left << "max:";
-		cout << setw(14) << showpos << setw(14) << maxValue << endl;
+		cout << "max: " << showpos << setw(14) << internal << maxValue << endl;
 		in.clear();
 	}
 }
