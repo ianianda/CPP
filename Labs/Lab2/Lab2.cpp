@@ -33,24 +33,29 @@ namespace lab2
 				out << setw(12) << right << setfill(' ') << oct << number;
 				out << setw(11) << dec << number;
 				out << setw(9) << hex << number << endl;
+				in.clear();
+				in >> dump;
 				continue;
-			}
-
-			if ((in.eof()) && (number == NULL))
+			} 
+			else if ((in.eof()) && (number == NULL))
 			{
 				break;
 			}
-
-			if (in.fail())
+			else if (in.fail())
 			{
 				in.clear();
 				in >> dump;
 				continue;
 			}
-
-			out << setw(12) << right << setfill(' ') << oct << number;
-			out << setw(11) << dec << number;
-			out << setw(9) << hex << number << endl;
+			else
+			{
+				out << setw(12) << right << setfill(' ') << oct << number;
+				out << setw(11) << dec << number;
+				out << setw(9) << hex << number << endl;
+				in.clear();
+				in >> dump;
+			}
+			
 		}
 		out.flags(f);
 	}
@@ -69,23 +74,30 @@ namespace lab2
 				out << setw(12) << right << setfill(' ') << oct << number;
 				out << setw(11) << dec << number;
 				out << setw(9) << hex << number << endl;
-				continue;
-			}
-
-			if ((in.eof()) && (number == NULL))
-			{
-				break;
-			}
-
-			if (in.fail())
-			{
 				in.clear();
 				in >> dump;
 				continue;
 			}
 
-			out << setw(5) << setprecision(3) << fixed << " ";
-			out << setw(15) << internal << showpos << number << endl;
+			else if ((in.eof()) && (number == NULL))
+			{
+				break;
+			}
+
+			else if (in.fail())
+			{
+				in.clear();
+				in >> dump;
+				continue;
+			}
+			else
+			{
+				out << setw(5) << setprecision(3) << fixed << " ";
+				out << setw(15) << internal << showpos << number << endl;
+				in.clear();
+				in >> dump;
+			}
+
 			if (number > maxValue)
 			{
 				maxValue = number;
