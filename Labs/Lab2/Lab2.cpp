@@ -10,7 +10,7 @@ using namespace std;
 
 namespace lab2
 {
-	float maxValue = -LLONG_MAX;
+	float maxValue = (float) -LLONG_MAX;
 
 	void PrintIntegers(std::istream& in, std::ostream& out)
 	{
