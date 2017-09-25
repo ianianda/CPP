@@ -66,6 +66,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="TimeSheet.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TimeSheet.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
