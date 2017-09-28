@@ -6,21 +6,24 @@ namespace lab3
 		:mName(other.mName)
 		, mTotalDays(other.mTotalDays)
 		, mHourofDay(other.mHourofDay)
+		, maxEntries(other.maxEntries)
 	{
 	}
 
-	TimeSheet::TimeSheet(const char* name, int numDays)
-		: mTotalDays(numDays)
+	TimeSheet::TimeSheet(const char* name, int maxEntries)
+		: maxEntries(maxEntries)
 	{
 		mName = name;
 		mHourofDay = 0;
+		mTotalDays = 0;
 	}
 
 	void TimeSheet::AddTime(float timeInHours)
 	{
-		if (timeInHours < 10 && timeInHours >= 0) // store the time.
+		if (timeInHours < 10 && timeInHours >= 0 && mTotalDays < maxEntries)// store the time.
 		{
 			mHourofDay += timeInHours;
+			mTotalDays++;
 		}
 		else
 		{
@@ -34,6 +37,10 @@ namespace lab3
 
 	float TimeSheet::GetAverageTime() const
 	{
+		if (mTotalDays == 0)
+		{
+			return 0;
+		}
 		float value = (float)mHourofDay / mTotalDays;
 		return value;
 	}
