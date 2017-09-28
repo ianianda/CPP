@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iomanip>
-#include <string>  
+#include <string>
 #include <iostream>
 
 namespace lab3
@@ -9,10 +9,9 @@ namespace lab3
 	class TimeSheet
 	{
 	public:
-		TimeSheet(const char* employeeName, int maxEntries); // constructor. 
-														// name of employee, number of time entries
-		TimeSheet(const TimeSheet& copyEmployeeName); // copy constructor
-		virtual ~TimeSheet(); // desctructor
+		TimeSheet(const char* employeeName, int maxEntries);
+		TimeSheet(const TimeSheet& copyEmployeeName);
+		virtual ~TimeSheet();
 
 		void AddTime(float hours); // time worked each day. hours < 10, otherwise, ignore.
 		float GetTotalTime() const;  // time worked totally. hours + hours + hours...
@@ -28,7 +27,4 @@ namespace lab3
 		float mHourofDay;
 		int maxEntries;
 	};
-
-	// copy constructor 
-
 }

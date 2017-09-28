@@ -3,7 +3,7 @@
 namespace lab3
 {
 	TimeSheet::TimeSheet(const TimeSheet& other)
-		:mName(other.mName)
+		: mName(other.mName)
 		, mTotalDays(other.mTotalDays)
 		, mHourofDay(other.mHourofDay)
 		, maxEntries(other.maxEntries)
@@ -20,7 +20,7 @@ namespace lab3
 
 	void TimeSheet::AddTime(float timeInHours)
 	{
-		if (timeInHours < 10 && timeInHours >= 0 && mTotalDays < maxEntries)// store the time.
+		if (timeInHours < 10 && timeInHours > 0 && mTotalDays < maxEntries)// store the time.
 		{
 			mHourofDay += timeInHours;
 			mTotalDays++;
@@ -45,16 +45,13 @@ namespace lab3
 		return value;
 	}
 
-	const std::string & TimeSheet::GetName() const
+	const std::string& TimeSheet::GetName() const
 	{
 		return mName;
 	}
 
 	TimeSheet::~TimeSheet()
 	{
-		//delete mTotalDays;
-		//delete mTotalHours;
-		//delete mName;
 	}
 
 }

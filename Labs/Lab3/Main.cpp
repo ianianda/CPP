@@ -9,7 +9,7 @@ int main()
 
 	TimeSheet* timesheet = new TimeSheet("poppy", 5);
 
-	timesheet->AddTime(-7); // time worked each day. hours < 10, otherwise, ignore.
+	//timesheet->AddTime(-7); // time worked each day. hours < 10, otherwise, ignore.
 	timesheet->GetTotalTime();  // time worked totally. hours + hours + hours...
 	timesheet->GetAverageTime(); // total hours / total days
 	timesheet->GetName(); //name of employee.
