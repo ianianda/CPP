@@ -4,24 +4,34 @@ namespace lab3
 {
 	TimeSheet::TimeSheet(const char* name, int numDays)
 	{
+		mName = name;
+		mTotalDays = numDays;
 	}
 
 	void TimeSheet::AddTime(float timeInHours)
 	{
+		if (timeInHours < 10) // store the time.
+		{
+			mHourofDay += timeInHours;
+		}
+		else {
+
+		}
 	}
 
 	float TimeSheet::GetTotalTime() const
 	{
-		return 0.0f;
+
+		return mHourofDay;
 	}
 
 	float TimeSheet::GetAverageTime() const
 	{
-		return 0.0f;
+		return (mHourofDay/mTotalDays);
 	}
 
 	const std::string & TimeSheet::GetName() const
 	{
-		return "";
+		return mName;
 	}
 }
