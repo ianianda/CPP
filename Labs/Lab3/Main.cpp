@@ -3,12 +3,10 @@
 using namespace lab3;
 using namespace std;
 
-int main(const char* name, int day)
+int main(const char* name, int day, float a)
 {
-	//const char name;
-	float a;
-	std::cin >> a;
-	//int day;
+	//	float a = 10;
+	//	std::cin >> a;
 
 	TimeSheet* timesheet = new TimeSheet(name, day);
 
