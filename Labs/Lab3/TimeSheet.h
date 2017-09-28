@@ -14,15 +14,6 @@ namespace lab3
 		TimeSheet(const TimeSheet& copyEmployeeName, const TimeSheet& copyMaxEntries); // copy constructor
 		virtual ~TimeSheet(); // desctructor
 
-		TimeSheet(const TimeSheet& copyEmployeeName, const TimeSheet& copyMaxEntries)
-			: mTotalDays(copyEmployeeName.mTotalDays)
-			, mTotalHours(copyEmployeeName.mTotalHours)
-			, mHourofDay(copyEmployeeName.mHourofDay)
-		{
-			mName = new char[];
-			strcpy(mName, copyEmployeeName.GetName);
-			//memcpy(); ??
-		}
 
 
 		void AddTime(float hours); // time worked each day. hours < 10, otherwise, ignore.

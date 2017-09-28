@@ -1,12 +1,25 @@
 #include "TimeSheet.h"
 
+#include <iomanip>
+#include <string>  
+#include <iostream>
+
 namespace lab3
 {
 	TimeSheet::TimeSheet(const char* name, int numDays)
+
 	{
 		mName = name;
 		mTotalDays = numDays;
 	}
+
+	//TimeSheet::TimeSheet(const TimeSheet& copyEmployeeName)
+
+	//{
+		//mName = new char[strlen(copyEmployeeName.GetName())];
+		//strcpy(mName, copyEmployeeName.GetName);
+		//memcpy(); ??
+	//}
 
 	void TimeSheet::AddTime(float timeInHours)
 	{
@@ -27,11 +40,13 @@ namespace lab3
 
 	float TimeSheet::GetAverageTime() const
 	{
-		return (mHourofDay / mTotalDays);
+		return float((float)mHourofDay / mTotalDays);
 	}
 
 	const std::string & TimeSheet::GetName() const
 	{
 		return mName;
 	}
+
+
 }
