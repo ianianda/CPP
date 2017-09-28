@@ -7,7 +7,6 @@
 namespace lab3
 {
 	TimeSheet::TimeSheet(const char* name, int numDays)
-
 	{
 		mName = name;
 		mTotalDays = numDays;
@@ -27,14 +26,13 @@ namespace lab3
 		{
 			mHourofDay += timeInHours;
 		}
-		else {
-
+		else
+		{
 		}
 	}
 
 	float TimeSheet::GetTotalTime() const
 	{
-
 		return mHourofDay;
 	}
 
@@ -48,5 +46,11 @@ namespace lab3
 		return mName;
 	}
 
+	TimeSheet::~TimeSheet()
+	{
+		//delete mTotalDays;
+		//delete mTotalHours;
+		delete[] mName;
+	}
 
 }

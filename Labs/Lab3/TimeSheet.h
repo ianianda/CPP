@@ -14,8 +14,6 @@ namespace lab3
 		TimeSheet(const TimeSheet& copyEmployeeName, const TimeSheet& copyMaxEntries); // copy constructor
 		virtual ~TimeSheet(); // desctructor
 
-
-
 		void AddTime(float hours); // time worked each day. hours < 10, otherwise, ignore.
 		float GetTotalTime() const;  // time worked totally. hours + hours + hours...
 		float GetAverageTime() const; // total hours / total days
@@ -32,10 +30,4 @@ namespace lab3
 
 	// copy constructor 
 
-	TimeSheet::~TimeSheet()
-	{
-		//delete mTotalDays;
-		//delete mTotalHours;
-		delete[] mName;
-	}
 }
