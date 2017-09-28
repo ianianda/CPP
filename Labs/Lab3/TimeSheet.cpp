@@ -22,7 +22,7 @@ namespace lab3
 
 	void TimeSheet::AddTime(float timeInHours)
 	{
-		if (timeInHours < 10) // store the time.
+		if (timeInHours < 10 && timeInHours >= 0) // store the time.
 		{
 			mHourofDay += timeInHours;
 		}
@@ -38,7 +38,9 @@ namespace lab3
 
 	float TimeSheet::GetAverageTime() const
 	{
-		return float((float)mHourofDay / mTotalDays);
+		if (mHourofDay != NULL) {
+			return float((float)mHourofDay / mTotalDays);
+		}
 	}
 
 	const std::string & TimeSheet::GetName() const
