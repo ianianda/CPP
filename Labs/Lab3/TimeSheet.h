@@ -40,7 +40,7 @@ namespace lab3
 	};
 
 	// copy constructor 
-	
+
 	TimeSheet::~TimeSheet()
 	{
 		//delete mTotalDays;

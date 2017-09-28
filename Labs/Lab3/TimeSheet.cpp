@@ -27,7 +27,7 @@ namespace lab3
 
 	float TimeSheet::GetAverageTime() const
 	{
-		return (mHourofDay/mTotalDays);
+		return (mHourofDay / mTotalDays);
 	}
 
 	const std::string & TimeSheet::GetName() const
