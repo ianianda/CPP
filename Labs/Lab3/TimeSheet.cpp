@@ -8,17 +8,15 @@ namespace lab3
 {
 	TimeSheet::TimeSheet(const char* name, int numDays)
 	{
-		mName = name;
-		mTotalDays = numDays;
+		if (name != NULL)
+		{
+			mName = name;
+		}
+		if (numDays >= 0)
+		{
+			mTotalDays = numDays;
+		}
 	}
-
-	//TimeSheet::TimeSheet(const TimeSheet& copyEmployeeName)
-
-	//{
-		//mName = new char[strlen(copyEmployeeName.GetName())];
-		//strcpy(mName, copyEmployeeName.GetName);
-		//memcpy(); ??
-	//}
 
 	void TimeSheet::AddTime(float timeInHours)
 	{
@@ -33,13 +31,25 @@ namespace lab3
 
 	float TimeSheet::GetTotalTime() const
 	{
+		if (mHourofDay == NULL)
+		{
+			return NULL;
+		}
 		return mHourofDay;
 	}
 
 	float TimeSheet::GetAverageTime() const
 	{
 		float value = (float)mHourofDay / mTotalDays;
-		if (mHourofDay == NULL) {
+		if ((mHourofDay == NULL) || (mTotalDays == NULL)) {
+			return NULL;
+		}
+		if ((mHourofDay < 0) || (mTotalDays < 0))
+		{
+			return NULL;
+		}
+		if (mHourofDay > 10)
+		{
 			return NULL;
 		}
 		return value;
@@ -47,6 +57,10 @@ namespace lab3
 
 	const std::string & TimeSheet::GetName() const
 	{
+		if (mName == NULL)
+		{
+			return NULL;
+		}
 		return mName;
 	}
 
