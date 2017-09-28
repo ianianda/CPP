@@ -1,21 +1,19 @@
 #include "TimeSheet.h"
 
-#include <iomanip>
-#include <string>  
-#include <iostream>
-
 namespace lab3
 {
-	TimeSheet::TimeSheet(const char* name, int numDays)
+	TimeSheet::TimeSheet(const TimeSheet& other)
+		:mName(other.mName)
+		, mTotalDays(other.mTotalDays)
+		, mHourofDay(other.mHourofDay)
 	{
-		if (name != NULL)
-		{
-			mName = name;
-		}
-		if (numDays >= 0)
-		{
-			mTotalDays = numDays;
-		}
+	}
+
+	TimeSheet::TimeSheet(const char* name, int numDays)
+		: mTotalDays(numDays)
+	{
+		mName = name;
+		mHourofDay = 0;
 	}
 
 	void TimeSheet::AddTime(float timeInHours)
@@ -31,36 +29,17 @@ namespace lab3
 
 	float TimeSheet::GetTotalTime() const
 	{
-		if (mHourofDay == NULL)
-		{
-			return NULL;
-		}
 		return mHourofDay;
 	}
 
 	float TimeSheet::GetAverageTime() const
 	{
 		float value = (float)mHourofDay / mTotalDays;
-		if ((mHourofDay == NULL) || (mTotalDays == NULL)) {
-			return NULL;
-		}
-		if ((mHourofDay < 0) || (mTotalDays < 0))
-		{
-			return NULL;
-		}
-		if (mHourofDay > 10)
-		{
-			return NULL;
-		}
 		return value;
 	}
 
 	const std::string & TimeSheet::GetName() const
 	{
-		if (mName == NULL)
-		{
-			return NULL;
-		}
 		return mName;
 	}
 
@@ -68,7 +47,7 @@ namespace lab3
 	{
 		//delete mTotalDays;
 		//delete mTotalHours;
-		delete[] mName;
+		//delete mName;
 	}
 
 }

@@ -11,7 +11,7 @@ namespace lab3
 	public:
 		TimeSheet(const char* employeeName, int maxEntries); // constructor. 
 														// name of employee, number of time entries
-		TimeSheet(const TimeSheet& copyEmployeeName, const TimeSheet& copyMaxEntries); // copy constructor
+		TimeSheet(const TimeSheet& copyEmployeeName); // copy constructor
 		virtual ~TimeSheet(); // desctructor
 
 		void AddTime(float hours); // time worked each day. hours < 10, otherwise, ignore.
@@ -24,7 +24,7 @@ namespace lab3
 		// to keep track of the time record. Define them here.
 		int mTotalDays;
 		float mTotalHours;
-		const char* mName;
+		std::string mName;
 		float mHourofDay;
 	};
 
