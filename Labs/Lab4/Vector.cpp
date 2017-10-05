@@ -60,7 +60,8 @@ namespace lab4
 
 	float Vector::operator[](unsigned int index) const
 	{
-		if (index == 0) {
+		if (index == 0)
+		{
 			return mX;
 		}
 		else if (index == 1)
