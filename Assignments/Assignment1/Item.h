@@ -4,6 +4,7 @@
 
 namespace assignment1
 {
+	/* abstract class */
 	class Item
 	{
 	public:
@@ -13,7 +14,7 @@ namespace assignment1
 		const std::string& GetName() const;
 
 	protected:
-		virtual ~Item();
+		virtual ~Item(); /*  */
 
 	private:
 		// private variables here

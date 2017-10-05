@@ -6,21 +6,21 @@ namespace lab3
 		: mName(other.mName)
 		, mTotalDays(other.mTotalDays)
 		, mHourofDay(other.mHourofDay)
-		, maxEntries(other.maxEntries)
+		, max(other.max)
 	{
 	}
 
 	TimeSheet::TimeSheet(const char* name, int maxEntries)
-		: maxEntries(maxEntries)
 	{
 		mName = name;
 		mHourofDay = 0;
 		mTotalDays = 0;
+		max = maxEntries;
 	}
 
 	void TimeSheet::AddTime(float timeInHours)
 	{
-		if (timeInHours < 10 && timeInHours > 0 && mTotalDays < maxEntries)// store the time.
+		if (timeInHours < 10 && timeInHours > 0 && mTotalDays < max)// store the time.
 		{
 			mHourofDay += timeInHours;
 			mTotalDays++;

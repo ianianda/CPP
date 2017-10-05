@@ -3,13 +3,26 @@
 
 namespace assignment1
 {
+	ShoppingCart::ShoppingCart(const ShoppingCart& other)
+	//	: mItem(other.mItem)
+	{
+	}
+
 	ShoppingCart::ShoppingCart()
 	{
 	}
 
 	bool ShoppingCart::AddItem(const Item* item)
 	{
-		return false; // return true if success. Else return false
+		if (item != NULL)
+		{
+			Item.add(item);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	bool ShoppingCart::RemoveItem(unsigned int index)
@@ -19,11 +32,22 @@ namespace assignment1
 
 	const Item* ShoppingCart::GetItem(unsigned int index) const
 	{
-		return NULL;
+		if (index < 10)
+		{
+			return item[index];
+		}
+		else
+		{
+			return NULL;
+		}
 	}
 
 	const Item* ShoppingCart::operator[](unsigned int index) const
 	{
+		if (index == 0)
+		{
+			return Cart[0];
+		}
 		return NULL;
 	}
 

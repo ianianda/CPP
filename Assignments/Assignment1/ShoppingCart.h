@@ -20,5 +20,7 @@ namespace assignment1
 		ShoppingCart(const ShoppingCart& other) {}
 
 		// private variables here
+		int maxSize = 10;
+		//Item mItem;
 	};
 }

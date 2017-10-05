@@ -25,6 +25,6 @@ namespace lab3
 		float mTotalHours;
 		std::string mName;
 		float mHourofDay;
-		int maxEntries;
+		int max;
 	};
 }

@@ -13,10 +13,13 @@ namespace assignment1
 
 	unsigned int IceCream::GetCost() const
 	{
+		ounces = scoops * 2;
+		price = 120 * ounces;
 		return 0U; // return cost here
 	}
 
 	void IceCream::AddCone()
 	{
+		mCone;
 	}
 }
