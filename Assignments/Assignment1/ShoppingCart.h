@@ -9,7 +9,7 @@ namespace assignment1
 	public:
 		ShoppingCart();
 
-		bool AddItem(const Item* item);
+		bool AddItem(Item* item);
 		bool RemoveItem(unsigned int index);
 
 		const Item* GetItem(unsigned int index) const;
@@ -21,7 +21,7 @@ namespace assignment1
 
 		// private variables here
 		int maxSize = 10;
-		char mList[10];
+		Item* mList[10];
 		int count = 0;
 	};
 }

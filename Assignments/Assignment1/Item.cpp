@@ -18,4 +18,9 @@ namespace assignment1
 	{
 		return std::string(); // return name here
 	}
+
+	//unsigned int GetCost() 
+	//{
+		//return;
+	//}
 }

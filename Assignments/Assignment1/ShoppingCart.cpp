@@ -7,11 +7,11 @@ namespace assignment1
 	{
 	}
 
-	bool ShoppingCart::AddItem(const Item* item)
+	bool ShoppingCart::AddItem(Item* item)
 	{
 		if ((item != NULL) && (count < 10))
 		{
-			mList[count] = (char)item;
+			mList[count] = item;
 			count++;
 			return true;
 		}
@@ -64,7 +64,11 @@ namespace assignment1
 
 	float ShoppingCart::GetTotal() const
 	{
-		
-		return 0.f; // return total cost in dollars
+		float result = 0;
+		for (int i = 0; i < count; i++) {
+			if(mList[i] != NULL)
+				result += (*mList[i]).GetCost();
+		}
+		return result; // return total cost in dollars
 	}
 }
