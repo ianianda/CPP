@@ -9,6 +9,6 @@ namespace assignment1
 	unsigned int Cone::GetCost() const
 	{
 		//if addCone method is called, price+10, return new price.
-		return 0U; // return cost here
+		return (int) 10; // return cost here
 	}
 }

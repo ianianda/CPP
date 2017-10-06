@@ -66,9 +66,9 @@ namespace assignment1
 	{
 		float result = 0;
 		for (int i = 0; i < count; i++) {
-			if(mList[i] != NULL)
+			if (mList[i] != NULL)
 				result += (*mList[i]).GetCost();
 		}
-		return result; // return total cost in dollars
+		return (int)result / 100; // return total cost in dollars
 	}
 }

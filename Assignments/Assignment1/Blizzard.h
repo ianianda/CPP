@@ -10,5 +10,9 @@ namespace assignment1
 		Blizzard(const char* name, unsigned int numScoops);
 
 		unsigned GetCost() const;
+
+	private:
+
+		int mScoops;
 	};
 }

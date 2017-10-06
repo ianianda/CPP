@@ -11,6 +11,6 @@ namespace assignment1
 
 	unsigned int Candy::GetCost() const
 	{
-		return 68*mWeight; // 0U
+		return (int) 68*mWeight/328.9; // 0U
 	}
 }
