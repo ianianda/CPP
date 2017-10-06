@@ -5,11 +5,12 @@ namespace assignment1
 {
 	Candy::Candy(const char* name, float weight)
 		: Item(name)
+		, mWeight(weight)
 	{
 	}
 
 	unsigned int Candy::GetCost() const
 	{
-		return 0U; // return cost here
+		return 68*mWeight; // 0U
 	}
 }

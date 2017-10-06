@@ -8,18 +8,28 @@ namespace assignment1
 	IceCream::IceCream(const char* name, unsigned int scoops)
 		: Item(name)
 		, mCone(NULL)
+		, ounces(scoops * 2)
 	{
 	}
 
-	unsigned int IceCream::GetCost() const
+	unsigned int IceCream::GetCost() const //round to nearest cent
 	{
-		ounces = scoops * 2;
-		price = 120 * ounces;
-		return 0U; // return cost here
+		//price = 120 * ounces; //0U
+		if (mCone != NULL)
+		{
+			return (120 * ounces + mCone->GetCost());
+		}
+		else
+		{
+			return 120 * ounces;
+		}
 	}
 
 	void IceCream::AddCone()
 	{
-		mCone;
+		if (mCone == NULL)
+		{
+			mCone = new Cone();
+		}
 	}
 }

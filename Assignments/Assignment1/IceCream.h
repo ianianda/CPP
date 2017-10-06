@@ -1,3 +1,4 @@
+#pragma once
 #include "Item.h"
 
 namespace assignment1
@@ -14,7 +15,8 @@ namespace assignment1
 
 	private:
 		// private variables here
-
+		int ounces;
+		//int price;
 		Cone* mCone;
 	};
 }

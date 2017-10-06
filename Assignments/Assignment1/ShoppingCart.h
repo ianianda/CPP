@@ -21,6 +21,7 @@ namespace assignment1
 
 		// private variables here
 		int maxSize = 10;
-		//Item mItem;
+		char mList[10];
+		int count = 0;
 	};
 }

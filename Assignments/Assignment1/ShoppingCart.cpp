@@ -3,20 +3,16 @@
 
 namespace assignment1
 {
-	ShoppingCart::ShoppingCart(const ShoppingCart& other)
-	//	: mItem(other.mItem)
-	{
-	}
-
 	ShoppingCart::ShoppingCart()
 	{
 	}
 
 	bool ShoppingCart::AddItem(const Item* item)
 	{
-		if (item != NULL)
+		if ((item != NULL) && (count < 10))
 		{
-			Item.add(item);
+			mList[count] = (char)item;
+			count++;
 			return true;
 		}
 		else
@@ -27,14 +23,26 @@ namespace assignment1
 
 	bool ShoppingCart::RemoveItem(unsigned int index)
 	{
-		return false; // return true if success. Else return false
+		if (index <= count)
+		{
+			for (int i = index; i < count; i++) // i < 10
+			{
+				mList[index] = mList[index + 1];
+				mList[count - 1] = NULL;
+			}
+			return true;
+		}
+		else
+		{
+			return false; // return true if success. Else return false
+		}
 	}
 
 	const Item* ShoppingCart::GetItem(unsigned int index) const
 	{
 		if (index < 10)
 		{
-			return item[index];
+			return (Item*)mList[index];
 		}
 		else
 		{
@@ -44,15 +52,19 @@ namespace assignment1
 
 	const Item* ShoppingCart::operator[](unsigned int index) const
 	{
-		if (index == 0)
+		if (index < 10)
 		{
-			return Cart[0];
+			return (Item*)mList[index];
 		}
-		return NULL;
+		else
+		{
+			return NULL;
+		}
 	}
 
 	float ShoppingCart::GetTotal() const
 	{
+		
 		return 0.f; // return total cost in dollars
 	}
 }

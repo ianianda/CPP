@@ -11,5 +11,6 @@ namespace assignment1
 
 	private:
 		// private variables here
+		int mCount;
 	};
 }

@@ -6,10 +6,11 @@ namespace assignment1
 {
 	Donut::Donut(const char * name, unsigned int count)
 		: Item(name)
+		, mCount(count)
 	{
 	}
-	unsigned int Donut::GetCost() const
+	unsigned int Donut::GetCost() const //round to nearest cent
 	{
-		return 0U; // return cost here
+		return mCount/12*899; // 0U
 	}
 }
