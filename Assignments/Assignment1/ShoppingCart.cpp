@@ -8,7 +8,7 @@ namespace assignment1
 	{
 	}
 
-	bool ShoppingCart::AddItem(Item* item)
+	bool ShoppingCart::AddItem(const Item* item)
 	{
 		if ((item != NULL) && (count < 10))
 		{
@@ -26,7 +26,7 @@ namespace assignment1
 	{
 		if (index <= count)
 		{
-			for (int i = index; i < count; i++) // i < 10
+			for (unsigned int i = index; i < count; i++) // i < 10
 			{
 				mList[index] = mList[index + 1];
 				mList[count - 1] = NULL;
@@ -66,7 +66,7 @@ namespace assignment1
 	float ShoppingCart::GetTotal() const
 	{
 		float result = 0;
-		for (int i = 0; i < count; i++) {
+		for (unsigned int i = 0; i < count; i++) {
 			if (mList[i] != NULL)
 				result += (*mList[i]).GetCost();
 		}
