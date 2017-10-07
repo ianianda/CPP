@@ -11,6 +11,6 @@ namespace assignment1
 
 	unsigned int Candy::GetCost() const
 	{
-		return static_cast<int>(nearbyint(68*mWeight));
+		return static_cast<int>(nearbyint(68 * mWeight));
 	}
 }

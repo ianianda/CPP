@@ -11,6 +11,6 @@ namespace assignment1
 	}
 	unsigned int Donut::GetCost() const
 	{
-		return static_cast<int>(899*mCount/12);
+		return static_cast<int>(899 * mCount / 12);
 	}
 }
