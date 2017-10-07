@@ -9,6 +9,7 @@ namespace assignment1
 	{
 	public:
 		IceCream(const char* name, unsigned int numScoops);
+		IceCream(const IceCream& copyEmployeeName);
 		virtual ~IceCream();
 		unsigned int GetCost() const;
 		void AddCone();
