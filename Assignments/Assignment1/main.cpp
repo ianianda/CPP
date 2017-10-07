@@ -24,7 +24,7 @@ int main()
 	//cart.AddItem(candy);
 	//cart.AddItem(donut);
 	//cart.AddItem(icecream);
-	//cart.GetItem(8);
+	//cart.GetItem();
 	std::cout << blizzard->GetName() << std::endl;;
 	//std::cout << cart.GetTotal() << std::endl; // should print 18
 }

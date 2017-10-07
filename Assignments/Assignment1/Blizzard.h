@@ -8,10 +8,9 @@ namespace assignment1
 	{
 	public:
 		Blizzard(const char* name, unsigned int numScoops);
-//		Blizzard(const Blizzard& copyEmployeeName);
 		virtual ~Blizzard();
 		unsigned GetCost() const;
-		const std::string& GetName() const;
+//		const std::string GetName() const;
 
 	private:
 		int mScoops;

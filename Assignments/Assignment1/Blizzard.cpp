@@ -14,10 +14,10 @@ namespace assignment1
 		return (int)(mScoops * 2 * 120 + 120); // return cost here
 	}
 
-	const std::string& Blizzard::GetName() const
-	{
-		return mName; // return cost here
-	}
+//	const std::string Blizzard::GetName() const
+//	{
+//		return mName; // return cost here
+//	}
 
 	Blizzard::~Blizzard()
 	{
