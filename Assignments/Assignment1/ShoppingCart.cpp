@@ -75,6 +75,6 @@ namespace assignment1
 
 	ShoppingCart::~ShoppingCart()
 	{
-
+		delete mList;
 	}
 }
