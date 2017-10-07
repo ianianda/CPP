@@ -24,7 +24,7 @@ namespace assignment1
 
 	bool ShoppingCart::RemoveItem(unsigned int index)
 	{
-		if (index <= count)
+		if (index < count)
 		{
 			for (unsigned int i = index; i < count; i++) // i < 10
 			{
