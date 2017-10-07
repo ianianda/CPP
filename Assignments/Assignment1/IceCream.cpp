@@ -30,6 +30,15 @@ namespace assignment1
 		{
 			mCone = new Cone();
 		}
-		delete mCone;
+	}
+
+	IceCream::~IceCream()
+	{
+		if (mCone != NULL)
+		{
+			delete mCone;
+		}
+
+		mCone = NULL;
 	}
 }
