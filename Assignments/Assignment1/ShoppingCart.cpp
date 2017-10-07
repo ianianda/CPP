@@ -41,7 +41,7 @@ namespace assignment1
 
 	const Item* ShoppingCart::GetItem(unsigned int index) const
 	{
-		if (index < 10)
+		if ((index < 10) && (mList[index] != NULL))
 		{
 			return (Item*)mList[index];
 		}
@@ -53,7 +53,7 @@ namespace assignment1
 
 	const Item* ShoppingCart::operator[](unsigned int index) const
 	{
-		if (index < 10)
+		if (index < 10 && (mList[index] != NULL))
 		{
 			return (Item*)mList[index];
 		}
@@ -70,6 +70,11 @@ namespace assignment1
 			if (mList[i] != NULL)
 				result += (*mList[i]).GetCost();
 		}
-		return nearbyint(result / 100); // return total cost in dollars
+		return static_cast<float>(nearbyint(result / 100)); // return total cost in dollars
+	}
+
+	ShoppingCart::~ShoppingCart()
+	{
+
 	}
 }

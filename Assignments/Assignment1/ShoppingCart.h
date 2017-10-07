@@ -8,7 +8,7 @@ namespace assignment1
 	{
 	public:
 		ShoppingCart();
-
+		virtual ~ShoppingCart();
 		bool AddItem(const Item* item);
 		bool RemoveItem(unsigned int index);
 
