@@ -5,7 +5,7 @@ namespace assignment1
 	Blizzard::Blizzard(const char* name, unsigned int scoops)
 		: IceCream(name, scoops)
 		, mScoops(scoops)
-		, mName(name)
+//		, mName(name)
 	{
 	}
 

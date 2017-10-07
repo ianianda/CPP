@@ -14,6 +14,6 @@ namespace assignment1
 
 	private:
 		int mScoops;
-		const char* mName;
+//		const char* mName;
 	};
 }
