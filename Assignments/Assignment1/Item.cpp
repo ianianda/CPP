@@ -14,13 +14,8 @@ namespace assignment1
 	}
 
 	/* gets the name of item */
-	const std::string& Item::GetName() const
+	const std::string Item::GetName() const
 	{
 		return std::string(); // return name here
 	}
-
-	//unsigned int GetCost() 
-	//{
-		//return;
-	//}
 }

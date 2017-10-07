@@ -1,6 +1,6 @@
 #include "Donut.h"
-
 #include <cmath>
+#include <math.h>
 
 namespace assignment1
 {
@@ -9,8 +9,8 @@ namespace assignment1
 		, mCount(count)
 	{
 	}
-	unsigned int Donut::GetCost() const //round to nearest cent
+	unsigned int Donut::GetCost() const
 	{
-		return (int) (899*mCount/12); // 0U
+		return static_cast<int>(899*mCount/12);
 	}
 }

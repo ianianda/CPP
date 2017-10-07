@@ -11,14 +11,12 @@ namespace assignment1
 		Item(const char* name);
 
 		virtual unsigned int GetCost() const = 0;
-		const std::string& GetName() const;
+		const std::string GetName() const;
 
 	protected:
-		virtual ~Item(); /*  */
+		virtual ~Item();
 
 	private:
-		// private variables here
-
 		friend class ShoppingCart;
 	};
 }

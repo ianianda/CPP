@@ -12,9 +12,8 @@ namespace assignment1
 	{
 	}
 
-	unsigned int IceCream::GetCost() const //round to nearest cent
+	unsigned int IceCream::GetCost() const
 	{
-		//price = 120 * ounces; //0U
 		if (mCone != NULL)
 		{
 			return (120 * ounces + mCone->GetCost());
@@ -31,11 +30,6 @@ namespace assignment1
 		{
 			mCone = new Cone();
 		}
-
 		delete mCone;
 	}
-
-
-
-
 }
