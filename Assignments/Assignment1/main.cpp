@@ -14,17 +14,17 @@ int main()
 	ShoppingCart cart;
 
 	Item* blizzard = new Blizzard("Smarties Blizzard", 3);
-//	Item* candy = new Candy("Gummy Bears", 2.5f);
-//	Item* donut = new Donut("Candian Maple", 4);
-//	IceCream* icecream = new IceCream("Vanilla", 2);
+	Item* candy = new Candy("Gummy Bears", 2.5f);
+	Item* donut = new Donut("Candian Maple", 4);
+	IceCream* icecream = new IceCream("Vanilla", 2);
 
-//	icecream->AddCone();
+	icecream->AddCone();
 	
 	cart.AddItem(blizzard);
-	//cart.AddItem(candy);
-	//cart.AddItem(donut);
-	//cart.AddItem(icecream);
+	cart.AddItem(candy);
+	cart.AddItem(donut);
+	cart.AddItem(icecream);
 	//cart.GetItem();
-	std::cout << blizzard->GetName() << std::endl;;
-	//std::cout << cart.GetTotal() << std::endl; // should print 18
+	//std::cout << blizzard->GetName() << std::endl;;
+	std::cout << cart.GetTotal() << std::endl; // should print 18
 }
