@@ -20,10 +20,11 @@ int main()
 
 	icecream->AddCone();
 
-	cart.AddItem(blizzard);
-	cart.AddItem(candy);
-	cart.AddItem(donut);
-	cart.AddItem(icecream);
-
-	std::cout << cart.GetTotal() << std::endl; // should print 18
+	//cart.AddItem(blizzard);
+	//cart.AddItem(candy);
+	//cart.AddItem(donut);
+	//cart.AddItem(icecream);
+	//cart.GetItem(8);
+	std::cout << cart.GetItem(8) << std::endl;;
+	//std::cout << cart.GetTotal() << std::endl; // should print 18
 }
