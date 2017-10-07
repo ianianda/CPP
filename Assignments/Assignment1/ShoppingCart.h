@@ -21,7 +21,7 @@ namespace assignment1
 
 		// private variables here
 		int maxSize = 10;
-		const Item* mList[10] = {};
+		const Item* mList[10];
 		unsigned int count = 0;
 	};
 }

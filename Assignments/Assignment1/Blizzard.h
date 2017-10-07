@@ -10,6 +10,7 @@ namespace assignment1
 		Blizzard(const char* name, unsigned int numScoops);
 		virtual ~Blizzard();
 		unsigned GetCost() const;
+		const std::string GetName() const;
 
 	private:
 		int mScoops;

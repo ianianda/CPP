@@ -19,12 +19,12 @@ int main()
 //	IceCream* icecream = new IceCream("Vanilla", 2);
 
 //	icecream->AddCone();
-
+	
 	cart.AddItem(blizzard);
 	//cart.AddItem(candy);
 	//cart.AddItem(donut);
 	//cart.AddItem(icecream);
 	//cart.GetItem(8);
-	std::cout << cart.GetTotal() << std::endl;;
+	std::cout << blizzard->GetName() << std::endl;;
 	//std::cout << cart.GetTotal() << std::endl; // should print 18
 }
