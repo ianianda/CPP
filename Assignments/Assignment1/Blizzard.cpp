@@ -12,4 +12,8 @@ namespace assignment1
 	{
 		return (int)(mScoops * 2 * 120 + 120); // return cost here
 	}
+
+	Blizzard::~Blizzard()
+	{
+	}
 }

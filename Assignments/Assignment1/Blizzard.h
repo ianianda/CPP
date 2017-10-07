@@ -8,11 +8,10 @@ namespace assignment1
 	{
 	public:
 		Blizzard(const char* name, unsigned int numScoops);
-
+		virtual ~Blizzard();
 		unsigned GetCost() const;
 
 	private:
-
 		int mScoops;
 	};
 }
