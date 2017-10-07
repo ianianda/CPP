@@ -11,6 +11,6 @@ namespace assignment1
 	unsigned int Blizzard::GetCost() const
 	{
 		
-		return (int) mScoops*2*120; // return cost here
+		return (int) (mScoops*2*120+120); // return cost here
 	}
 }

@@ -1,5 +1,6 @@
 #include "ShoppingCart.h"
 #include "Item.h"
+#include <math.h>
 
 namespace assignment1
 {
@@ -69,6 +70,6 @@ namespace assignment1
 			if (mList[i] != NULL)
 				result += (*mList[i]).GetCost();
 		}
-		return (int)result / 100; // return total cost in dollars
+		return nearbyint(result / 100); // return total cost in dollars
 	}
 }

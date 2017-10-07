@@ -11,6 +11,6 @@ namespace assignment1
 	}
 	unsigned int Donut::GetCost() const //round to nearest cent
 	{
-		return mCount/12*899; // 0U
+		return (int) (899*mCount/12); // 0U
 	}
 }

@@ -31,5 +31,11 @@ namespace assignment1
 		{
 			mCone = new Cone();
 		}
+
+		delete mCone;
 	}
+
+
+
+
 }
