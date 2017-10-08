@@ -9,6 +9,7 @@ namespace assignment1
 		: Item(name)
 		, mCone(NULL)
 		, ounces(scoops * 2)
+		, mName(name)
 	{
 	}
 
@@ -30,6 +31,11 @@ namespace assignment1
 		{
 			mCone = new Cone();
 		}
+	}
+
+	const std::string IceCream::GetName() const
+	{
+		return mName; // return cost here
 	}
 
 	IceCream::~IceCream()

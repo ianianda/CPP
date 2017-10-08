@@ -6,11 +6,13 @@ namespace assignment1
 	{
 	public:
 		Donut(const char* name, unsigned int count);
-
+		virtual ~Donut();
 		unsigned int GetCost() const;
+		const std::string GetName() const;
 
 	private:
 		// private variables here
 		int mCount;
+		const char* mName;
 	};
 }

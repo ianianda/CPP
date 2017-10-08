@@ -4,16 +4,20 @@
 
 namespace assignment1
 {
+	class Cone;
+
 	class Blizzard : public IceCream
 	{
 	public:
 		Blizzard(const char* name, unsigned int numScoops);
 		virtual ~Blizzard();
 		unsigned GetCost() const;
-//		const std::string GetName() const;
+		void AddCone();
+		const std::string GetName() const;
 
 	private:
 		int mScoops;
-//		const char* mName;
+		Cone* mCone;
+		const char* mName;
 	};
 }
