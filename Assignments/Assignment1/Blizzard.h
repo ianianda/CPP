@@ -13,7 +13,7 @@ namespace assignment1
 		virtual ~Blizzard();
 		unsigned GetCost() const;
 		void AddCone();
-		const std::string GetName() const;
+		const std::string GetName() const override;
 
 	private:
 		int mScoops;

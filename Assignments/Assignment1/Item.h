@@ -10,7 +10,7 @@ namespace assignment1
 	public:
 		Item(const char* name);
 		virtual unsigned int GetCost() const = 0;
-		const std::string GetName() const;
+		virtual const std::string GetName() const = 0;
 
 	protected:
 		virtual ~Item();

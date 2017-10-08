@@ -8,7 +8,7 @@ namespace assignment1
 		Donut(const char* name, unsigned int count);
 		virtual ~Donut();
 		unsigned int GetCost() const;
-		const std::string GetName() const;
+		const std::string GetName() const override;
 
 	private:
 		// private variables here

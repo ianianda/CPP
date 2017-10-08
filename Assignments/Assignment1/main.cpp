@@ -13,19 +13,20 @@ int main()
 {
 	ShoppingCart cart;
 
-	//	Blizzard* blizzard = new Blizzard("Smarties Blizzard", 3);
+//		Item* blizzard = new Blizzard("Smarties Blizzard", 3);
 	//	Candy* candy = new Candy("Gummy Bears", 2.5f);
 	//	Donut* donut = new Donut("Candian Maple", 4);
-	IceCream* icecream = new IceCream("Vanilla", 2);
+		Item* icecream = new IceCream("Vanilla", 2);
 
 	//	blizzard->AddCone();
 	//	icecream->AddCone();
 
-	//	cart.AddItem(blizzard);
+//		cart.AddItem(blizzard);
 	//	cart.AddItem(candy);
 	//	cart.AddItem(donut);
 	cart.AddItem(icecream);
 
+//	std::cout << blizzard->GetName() << std::endl;
 	std::cout << icecream->GetName() << std::endl;
 	//std::cout << donut->GetName() << std::endl;
 	//std::cout << candy->GetName() << std::endl;

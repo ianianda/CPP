@@ -5,7 +5,7 @@ namespace assignment1
 	/* abstract class */
 	Item::Item(const char* name)
 	{
-		//mName = name;
+
 	}
 
 	Item::~Item()
