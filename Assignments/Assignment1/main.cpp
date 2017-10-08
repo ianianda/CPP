@@ -13,25 +13,29 @@ int main()
 {
 	ShoppingCart cart;
 
-//		Item* blizzard = new Blizzard("Smarties Blizzard", 3);
-	//	Candy* candy = new Candy("Gummy Bears", 2.5f);
-	//	Donut* donut = new Donut("Candian Maple", 4);
-		Item* icecream = new IceCream("Vanilla", 2);
+	Item* blizzard = new Blizzard("smarties blizzard", 3);
+	Item* blizzard2(blizzard);
 
-	//	blizzard->AddCone();
-	//	icecream->AddCone();
+	Candy* candy = new Candy("gummy bears", 2.5f);
+	Donut* donut = new Donut("candian maple", 4);
+	Item* icecream = new IceCream("Vanilla", 2);
+	Item* icecream2(icecream);
 
-//		cart.AddItem(blizzard);
-	//	cart.AddItem(candy);
-	//	cart.AddItem(donut);
+//	blizzard->AddCone();
+//	icecream->AddCone();
+
+	cart.AddItem(blizzard);
+	cart.AddItem(candy);
+	cart.AddItem(donut);
 	cart.AddItem(icecream);
 
-//	std::cout << blizzard->GetName() << std::endl;
+	std::cout << blizzard->GetName() << std::endl;
+	std::cout << icecream2->GetName() << std::endl;
 	std::cout << icecream->GetName() << std::endl;
-	//std::cout << donut->GetName() << std::endl;
-	//std::cout << candy->GetName() << std::endl;
-//	std::cout << donut->GetName() << std::endl;
+	std::cout << donut->GetName() << std::endl;
+	std::cout << candy->GetName() << std::endl;
+	std::cout << donut->GetName() << std::endl;
 
-	//std::cout << blizzard.GetCost() << std::endl;
-//	std::cout << cart.GetTotal() << std::endl; // should print 18
+//	std::cout << blizzard.GetCost() << std::endl;
+	std::cout << cart.GetTotal() << std::endl; // should print 18
 }

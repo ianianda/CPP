@@ -5,6 +5,14 @@
 
 namespace assignment1
 {
+	IceCream::IceCream(const IceCream& other)
+		: Item(other.mName)
+		, ounces(other.ounces)
+		, mName(other.mName)
+		, mCone(other.mCone)
+	{
+	}
+
 	IceCream::IceCream(const char* name, unsigned int scoops)
 		: Item(name)
 		, mCone(NULL)

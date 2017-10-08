@@ -10,6 +10,8 @@ namespace assignment1
 	{
 	public:
 		Blizzard(const char* name, unsigned int numScoops);
+		Blizzard(const Blizzard& copyConstructor);
+
 		virtual ~Blizzard();
 		unsigned GetCost() const;
 		void AddCone();

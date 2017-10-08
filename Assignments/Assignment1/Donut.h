@@ -11,7 +11,6 @@ namespace assignment1
 		const std::string GetName() const override;
 
 	private:
-		// private variables here
 		int mCount;
 		const char* mName;
 	};

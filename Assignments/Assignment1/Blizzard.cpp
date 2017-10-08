@@ -3,13 +3,20 @@
 
 namespace assignment1
 {
+	Blizzard::Blizzard(const Blizzard& other)
+		: IceCream(other.mName, other.mScoops)
+		, mScoops(other.mScoops)
+		, mName(other.mName)
+		, mCone(other.mCone)
+	{
+	}
+
 	Blizzard::Blizzard(const char* name, unsigned int scoops)
 		: IceCream(name, scoops)
 		, mScoops(scoops)
 		, mCone(NULL)
 		, mName(name)
 	{
-		//		mName = name;
 	}
 
 
