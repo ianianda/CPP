@@ -43,7 +43,8 @@ namespace assignment1
 	{
 		if ((index <= count) && (index != 0))
 		{
-			//	return (*mList[index-1]).GetName(); //convert string to class object?
+			return NULL;
+			//return (*mList[index-1]).GetName(); //convert string to class object?
 		}
 		else
 		{

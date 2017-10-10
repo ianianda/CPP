@@ -14,12 +14,12 @@ int main()
 	ShoppingCart cart;
 
 	Item* blizzard = new Blizzard("smarties blizzard", 3);
-	Item* blizzard2(blizzard);
+	//Item* blizzard2(blizzard);
 
 	Candy* candy = new Candy("gummy bears", 2.5f);
 	Donut* donut = new Donut("candian maple", 4);
 	Item* icecream = new IceCream("Vanilla", 2);
-	Item* icecream2(icecream);
+	//Item* icecream2(icecream);
 
 	//blizzard->AddCone();
 	//icecream->AddCone();
@@ -30,12 +30,12 @@ int main()
 	cart.AddItem(icecream);
 
 	std::cout << blizzard->GetName() << std::endl;
-	std::cout << icecream2->GetName() << std::endl;
+	//std::cout << icecream2->GetName() << std::endl;
 	std::cout << icecream->GetName() << std::endl;
 	std::cout << donut->GetName() << std::endl;
 	std::cout << candy->GetName() << std::endl;
 	std::cout << donut->GetName() << std::endl;
 
-	std::cout << blizzard.GetCost() << std::endl;
+	//std::cout << blizzard.GetCost() << std::endl;
 	std::cout << cart.RemoveItem(0) << std::endl; // should print 18
 }
