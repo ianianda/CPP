@@ -43,8 +43,7 @@ namespace assignment1
 	{
 		if ((index <= count) && (index != 0))
 		{
-			return NULL;
-			//return (*mList[index-1]).GetName(); //convert string to class object?
+			return (const Item*) &mList[index-1]->GetName(); //return string instead of address?
 		}
 		else
 		{
