@@ -24,9 +24,9 @@ namespace assignment1
 
 	bool ShoppingCart::RemoveItem(unsigned int index)
 	{
-		if (index < count)
+		if ((index <= count) && (index != 0))
 		{
-			for (unsigned int i = index; i < count; i++) // i < 10
+			for (unsigned int i = index; i <= count; i++) // i < 10
 			{
 				mList[index] = mList[index + 1];
 				mList[count - 1] = NULL;
@@ -41,9 +41,9 @@ namespace assignment1
 
 	const Item* ShoppingCart::GetItem(unsigned int index) const
 	{
-		if ((index < 10) && (mList[index] != NULL))
+		if ((index <= count) && (index != 0))
 		{
-			return (Item*)mList[index];
+			//	return (*mList[index-1]).GetName(); //convert string to class object?
 		}
 		else
 		{

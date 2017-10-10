@@ -21,8 +21,8 @@ int main()
 	Item* icecream = new IceCream("Vanilla", 2);
 	Item* icecream2(icecream);
 
-//	blizzard->AddCone();
-//	icecream->AddCone();
+	//blizzard->AddCone();
+	//icecream->AddCone();
 
 	cart.AddItem(blizzard);
 	cart.AddItem(candy);
@@ -36,6 +36,6 @@ int main()
 	std::cout << candy->GetName() << std::endl;
 	std::cout << donut->GetName() << std::endl;
 
-//	std::cout << blizzard.GetCost() << std::endl;
-	std::cout << cart.GetTotal() << std::endl; // should print 18
+	std::cout << blizzard.GetCost() << std::endl;
+	std::cout << cart.RemoveItem(0) << std::endl; // should print 18
 }
