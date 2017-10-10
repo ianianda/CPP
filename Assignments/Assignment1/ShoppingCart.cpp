@@ -24,9 +24,9 @@ namespace assignment1
 
 	bool ShoppingCart::RemoveItem(unsigned int index)
 	{
-		if ((index <= count) && (index != 0))
+		if ((index < count + 1) && (index != 0))
 		{
-			for (unsigned int i = index; i <= count; i++) // i < 10
+			for (unsigned int i = index; i < count; i++) // i < 10
 			{
 				mList[index] = mList[index + 1];
 				mList[count - 1] = NULL;
@@ -43,7 +43,7 @@ namespace assignment1
 	{
 		if ((index <= count) && (index != 0))
 		{
-			return (const Item*) &mList[index-1]->GetName(); //return string instead of address?
+			return (const Item*)&mList[index - 1]->GetName(); //return string instead of address?
 		}
 		else
 		{
