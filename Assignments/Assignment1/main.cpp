@@ -13,11 +13,10 @@ int main()
 {
 	ShoppingCart cart;
 
-	//Item* blizzard = new Blizzard("smarties blizzard", 3);
-	//Item* blizzard2(blizzard);
+	Item* blizzard = new Blizzard("smarties blizzard", 3);
+	Item* blizzard2(blizzard);
 
 	IceCream* icecream = new IceCream("Vanilla", 2);
-	
 
 	icecream->AddCone();
 
