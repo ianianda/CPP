@@ -9,7 +9,6 @@ namespace assignment1
 		virtual ~Donut();
 		unsigned int GetCost() const;
 		const std::string GetName() const override;
-
 	private:
 		int mCount;
 		const char* mName;

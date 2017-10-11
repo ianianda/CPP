@@ -17,31 +17,27 @@ namespace assignment1
 			count++;
 			return true;
 		}
-		else
-		{
-			return false;
-		}
+		return false;
 	}
 
 	bool ShoppingCart::RemoveItem(unsigned int index)
 	{
 		if (index == count) {
 			mList[index] = NULL;
+			count--;
+			return true;
 		}
 		else if (index < count)
 		{
-			for (unsigned int i = index; i < count; i++)
+			for (unsigned int i = index; i < count; i++) // i < 10
 			{
 				mList[index] = mList[index + 1];
 				mList[count - 1] = NULL;
 			}
+			count--;
 			return true;
 		}
-		else
-		{
-			return false;
-		}
-		count--;
+		return false;
 	}
 
 	const Item* ShoppingCart::GetItem(unsigned int index) const
@@ -58,14 +54,11 @@ namespace assignment1
 
 	const Item* ShoppingCart::operator[](unsigned int index) const
 	{
-		if ((index <= count))
+		if ((index < 10) && (mList[index] != NULL))
 		{
 			return mList[index];
 		}
-		else
-		{
-			return NULL;
-		}
+		return NULL;
 	}
 
 	float ShoppingCart::GetTotal() const
@@ -75,7 +68,7 @@ namespace assignment1
 			if (mList[i] != NULL)
 				result += (*mList[i]).GetCost();
 		}
-		return result / 100;
+		return result / 100; // return total cost in dollars
 	}
 
 	ShoppingCart::~ShoppingCart()

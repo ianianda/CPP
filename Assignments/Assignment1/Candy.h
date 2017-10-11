@@ -9,7 +9,6 @@ namespace assignment1
 		virtual ~Candy();
 		unsigned int GetCost() const;
 		const std::string GetName() const override;
-		
 	private:
 		float mWeight;
 		const char* mName;
