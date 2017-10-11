@@ -7,6 +7,10 @@ namespace assignment1
 	ShoppingCart::ShoppingCart()
 	{
 		count = 0;
+		for (unsigned i = 0; i < 10; i++)
+		{
+			mList[i] = NULL;
+		}
 	}
 
 	bool ShoppingCart::AddItem(const Item* item)
@@ -32,7 +36,7 @@ namespace assignment1
 		}
 		else if (index < count)
 		{
-			for (unsigned int i = index; i < count; i++) // i < 10
+			for (unsigned int i = index; i < count; i++)
 			{
 				mList[i] = mList[i + 1];
 			}

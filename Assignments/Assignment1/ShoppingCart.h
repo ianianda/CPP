@@ -18,9 +18,6 @@ namespace assignment1
 		float GetTotal() const;
 	private:
 		ShoppingCart(const ShoppingCart& other) {}
-
-		// private variables here
-		//int maxSize = 10;
 		const Item* mList[10];
 		unsigned int count;
 	};
