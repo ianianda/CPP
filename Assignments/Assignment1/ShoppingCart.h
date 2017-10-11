@@ -20,8 +20,8 @@ namespace assignment1
 		ShoppingCart(const ShoppingCart& other) {}
 
 		// private variables here
-		int maxSize = 10;
+		//int maxSize = 10;
 		const Item* mList[10];
-		unsigned int count = 0;
+		unsigned int count;
 	};
 }

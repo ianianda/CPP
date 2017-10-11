@@ -6,6 +6,7 @@ namespace assignment1
 {
 	ShoppingCart::ShoppingCart()
 	{
+		count = 0;
 	}
 
 	bool ShoppingCart::AddItem(const Item* item)
@@ -24,7 +25,12 @@ namespace assignment1
 
 	bool ShoppingCart::RemoveItem(unsigned int index)
 	{
-		if ((index < count + 1) && (index != 0))
+		if (index == count) {
+			mList[index] = NULL;
+		}
+
+
+		if (index < count)
 		{
 			for (unsigned int i = index; i < count; i++) // i < 10
 			{
@@ -37,13 +43,14 @@ namespace assignment1
 		{
 			return false; // return true if success. Else return false
 		}
+		count--;
 	}
 
 	const Item* ShoppingCart::GetItem(unsigned int index) const
 	{
-		if ((index <= count) && (index != 0))
+		if ((index <= count))
 		{
-			return (const Item*)&mList[index - 1]->GetName(); //return string instead of address?
+			return mList[index];
 		}
 		else
 		{
@@ -55,7 +62,7 @@ namespace assignment1
 	{
 		if (index < 10 && (mList[index] != NULL))
 		{
-			return (Item*)mList[index];
+			return mList[index];
 		}
 		else
 		{
@@ -70,11 +77,11 @@ namespace assignment1
 			if (mList[i] != NULL)
 				result += (*mList[i]).GetCost();
 		}
-		return static_cast<float>(nearbyint(result / 100)); // return total cost in dollars
+		return result / 100; // return total cost in dollars
 	}
 
 	ShoppingCart::~ShoppingCart()
 	{
-		//delete mList;
+		delete[] * mList;
 	}
 }
