@@ -28,11 +28,9 @@ namespace assignment1
 		if (index == count) {
 			mList[index] = NULL;
 		}
-
-
-		if (index < count)
+		else if (index < count)
 		{
-			for (unsigned int i = index; i < count; i++) // i < 10
+			for (unsigned int i = index; i < count; i++)
 			{
 				mList[index] = mList[index + 1];
 				mList[count - 1] = NULL;
@@ -41,7 +39,7 @@ namespace assignment1
 		}
 		else
 		{
-			return false; // return true if success. Else return false
+			return false;
 		}
 		count--;
 	}
@@ -60,7 +58,7 @@ namespace assignment1
 
 	const Item* ShoppingCart::operator[](unsigned int index) const
 	{
-		if (index < 10 && (mList[index] != NULL))
+		if ((index <= count))
 		{
 			return mList[index];
 		}
@@ -77,7 +75,7 @@ namespace assignment1
 			if (mList[i] != NULL)
 				result += (*mList[i]).GetCost();
 		}
-		return result / 100; // return total cost in dollars
+		return result / 100;
 	}
 
 	ShoppingCart::~ShoppingCart()
