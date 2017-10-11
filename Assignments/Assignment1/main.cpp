@@ -29,14 +29,14 @@ int main()
 	cart.AddItem(donut);
 	cart.AddItem(icecream);
 
-	//std::cout << blizzard->GetName() << std::endl;
-	//std::cout << icecream2->GetName() << std::endl;
-	/*std::cout << icecream->GetName() << std::endl;
+	std::cout << blizzard->GetName() << std::endl;
+//	std::cout << icecream2->GetName() << std::endl;
+	std::cout << icecream->GetName() << std::endl;
 	std::cout << donut->GetName() << std::endl;
 	std::cout << candy->GetName() << std::endl;
 	std::cout << donut->GetName() << std::endl;
-*/
-	//std::cout << blizzard.GetCost() << std::endl;
-	//std::cout << cart.RemoveItem(0) << std::endl; // should print 18
-	std::cout << cart.GetItem(1) << std::endl;
+
+//	std::cout << blizzard.GetCost() << std::endl;
+	std::cout << cart.RemoveItem(0) << std::endl; // should print 18
+	std::cout << cart.RemoveItem(1) << std::endl;
 }
