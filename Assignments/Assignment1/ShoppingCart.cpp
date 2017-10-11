@@ -26,21 +26,19 @@ namespace assignment1
 
 	bool ShoppingCart::RemoveItem(unsigned int index)
 	{
-		if ((index == count)) {
-			mList[index] = NULL;
-			if (index != 0) {
-				count--;
-				return true;
-			}
+		if ((index > count) || (index == count)) {
 			return false;
 		}
 		else if (index < count)
 		{
 			for (unsigned int i = index; i < count; i++)
 			{
-				mList[i] = mList[i + 1];
+				if (i < 9)
+				{
+					mList[i] = mList[i + 1];
+				}
 			}
-			mList[count] = NULL;
+			mList[count - 1] = NULL;
 			count--;
 			return true;
 		}
