@@ -13,9 +13,15 @@ namespace assignment1
 	{
 		if (other.mCone != NULL)
 		{
-			mCone = new Cone();
-			memcpy(mCone, other.mCone, sizeof(Cone));
+			//mCone = new Cone();
+			//memcpy(mCone, other.mCone, sizeof(Cone));
 			//IceCream* mCone = new IceCream(*other.mCone);
+
+			// deep copy
+			mCone = new Cone(*other.mCone);
+
+			// Shallow copy
+
 		}
 	}
 
