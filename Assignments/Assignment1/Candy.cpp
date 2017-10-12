@@ -5,7 +5,6 @@ namespace assignment1
 {
 	Candy::Candy(const char* name, float weight)
 		: Item(name)
-//		, mCone(NULL)
 		, mWeight(weight)
 		, mName(name)
 	{

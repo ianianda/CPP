@@ -4,7 +4,7 @@
 
 namespace assignment1
 {
-	Donut::Donut(const char * name, unsigned int count)
+	Donut::Donut(const char* name, unsigned int count)
 		: Item(name)
 		, mCount(count)
 		, mName(name)
