@@ -26,7 +26,7 @@ namespace assignment1
 		, ounces(scoops * 2)
 		, mName(name)
 	{
-		mCone = new Cone[ounces];
+		//mCone = new Cone[ounces];
 		//memcpy(mCone, other.mCone, ounces);
 	}
 
