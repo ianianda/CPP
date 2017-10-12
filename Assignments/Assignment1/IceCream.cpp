@@ -9,6 +9,7 @@ namespace assignment1
 		: Item(other.mName)
 		, ounces(other.ounces)
 		, mName(other.mName)
+		, mCone(other.mCone)
 	{
 		if (other.mCone != NULL)
 		{
@@ -16,7 +17,6 @@ namespace assignment1
 			mCone = new Cone[ounces];
 
 			//do the copy
-			//*mCone = *(other.mCone);
 			memcpy(mCone, other.mCone, ounces);
 		}
 	}
@@ -27,7 +27,8 @@ namespace assignment1
 		, ounces(scoops * 2)
 		, mName(name)
 	{
-
+		mCone = new Cone[ounces];
+		//memcpy(mCone, other.mCone, ounces);
 	}
 
 	unsigned int IceCream::GetCost() const
