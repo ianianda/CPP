@@ -12,8 +12,11 @@ namespace assignment1
 	{
 		if (other.mCone != NULL)
 		{
-			// deep copy
-			Cone* mCone = new Cone(*other.mCone);
+			//allocate memory for deep copy
+			mCone = new Cone;
+
+			//do the copy
+			*mCone = *(other.mCone);
 		}
 	}
 
