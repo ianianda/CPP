@@ -26,7 +26,8 @@ namespace assignment1
 
 	bool ShoppingCart::RemoveItem(unsigned int index)
 	{
-		if ((index > count) || (index == count)) {
+		if ((index > count) || (index == count))
+		{
 			return false;
 		}
 		else if (index < count)
@@ -69,13 +70,14 @@ namespace assignment1
 	float ShoppingCart::GetTotal() const
 	{
 		float result = 0;
-		for (unsigned int i = 0; i < count; i++) {
+		for (unsigned int i = 0; i < count; i++)
+		{
 			if (mList[i] != NULL)
 			{
 				result += (*mList[i]).GetCost();
 			}
 		}
-		return result / 100; // return total cost in dollars
+		return result / 100;
 	}
 
 	ShoppingCart::~ShoppingCart()

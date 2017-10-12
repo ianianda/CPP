@@ -9,15 +9,11 @@ namespace assignment1
 		: Item(other.mName)
 		, ounces(other.ounces)
 		, mName(other.mName)
-		//, mCone(other.mCone)
 	{
 		if (other.mCone != NULL)
 		{
 			// deep copy
-			mCone = new Cone(*other.mCone);
-
-			// Shallow copy
-
+			Cone* mCone = new Cone(*other.mCone);
 		}
 	}
 
