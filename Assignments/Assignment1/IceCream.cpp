@@ -9,15 +9,8 @@ namespace assignment1
 		: Item(other.mName)
 		, ounces(other.ounces)
 		, mName(other.mName)
+		, mCone(NULL)
 	{
-		if (other.mCone != NULL)
-		{
-			//allocate memory for deep copy
-			mCone = new Cone(*(other.mCone));
-
-			//do the copy
-	//		memcpy(mCone, other.mCone, ounces);
-		}
 	}
 
 	IceCream::IceCream(const char* name, unsigned int scoops)
@@ -26,8 +19,6 @@ namespace assignment1
 		, ounces(scoops * 2)
 		, mName(name)
 	{
-		//mCone = new Cone[ounces];
-		//memcpy(mCone, other.mCone, ounces);
 	}
 
 	unsigned int IceCream::GetCost() const
