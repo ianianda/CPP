@@ -13,10 +13,10 @@ namespace assignment1
 		if (other.mCone != NULL)
 		{
 			//allocate memory for deep copy
-			mCone = new Cone[ounces];
+			mCone = new Cone(*(other.mCone));
 
 			//do the copy
-			memcpy(mCone, other.mCone, ounces);
+	//		memcpy(mCone, other.mCone, ounces);
 		}
 	}
 
