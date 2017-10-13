@@ -9,8 +9,11 @@ namespace assignment1
 		: Item(other.mName)
 		, ounces(other.ounces)
 		, mName(other.mName)
-		, mCone(NULL)
 	{
+		if (other.mCone != NULL)
+		{
+			mCone = new Cone(*(other.mCone));
+		}
 	}
 
 	IceCream::IceCream(const char* name, unsigned int scoops)
