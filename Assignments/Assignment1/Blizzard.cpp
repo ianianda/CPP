@@ -19,7 +19,6 @@ namespace assignment1
 	{
 	}
 
-
 	unsigned int Blizzard::GetCost() const
 	{
 		if (mCone != NULL)
@@ -28,7 +27,7 @@ namespace assignment1
 		}
 		else
 		{
-			return (int)(mScoops * 2 * 120 + 120); // return cost here
+			return (int)(mScoops * 2 * 120 + 120);
 		}
 	}
 
@@ -46,12 +45,10 @@ namespace assignment1
 		{
 			delete mCone;
 		}
-
-		mCone = NULL;
 	}
 
 	const std::string Blizzard::GetName() const
 	{
-		return mName; // return cost here
+		return mName;
 	}
 }
