@@ -9,7 +9,7 @@ namespace assignment1
 		: Item(other.mName)
 		, ounces(other.ounces)
 		, mName(other.mName)
-		, mCone(new Cone(*(other.mCone)))
+		, mCone(NULL)
 	{
 	}
 
