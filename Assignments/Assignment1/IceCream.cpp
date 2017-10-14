@@ -48,8 +48,7 @@ namespace assignment1
 		if (mCone != NULL)
 		{
 			delete mCone;
+			mCone = NULL;
 		}
-
-		mCone = NULL;
 	}
 }
