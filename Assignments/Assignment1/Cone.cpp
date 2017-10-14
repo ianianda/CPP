@@ -8,7 +8,7 @@ namespace assignment1
 	}
 
 	Cone::Cone(const Cone& other)
-		:cost(other.cost)
+		: cost(other.cost)
 	{
 	}
 
