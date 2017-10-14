@@ -9,17 +9,15 @@ namespace assignment1
 	class Blizzard : public IceCream
 	{
 	public:
-		Blizzard(const char* name, unsigned int numScoops);
+		Blizzard(const std::string name, unsigned int numScoops);
 		Blizzard(const Blizzard& copyConstructor);
 
 		virtual ~Blizzard();
 		unsigned GetCost() const;
 		void AddCone();
-		const std::string GetName() const override;
 
 	private:
 		int mScoops;
 		Cone* mCone;
-		const char* mName;
 	};
 }

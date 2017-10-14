@@ -4,18 +4,20 @@
 namespace assignment1
 {
 	Blizzard::Blizzard(const Blizzard& other)
-		: IceCream(other.mName, other.mScoops)
+		: IceCream(other.GetName(), other.mScoops)
 		, mScoops(other.mScoops)
-		, mName(other.mName)
-		, mCone(other.mCone)
 	{
+		if (other.mCone != NULL)
+		{
+			//allocate memory for deep copy
+			mCone = new Cone(*(other.mCone));
+		}
 	}
 
-	Blizzard::Blizzard(const char* name, unsigned int scoops)
+	Blizzard::Blizzard(const std::string name, unsigned int scoops)
 		: IceCream(name, scoops)
 		, mScoops(scoops)
 		, mCone(NULL)
-		, mName(name)
 	{
 	}
 
@@ -45,10 +47,5 @@ namespace assignment1
 		{
 			delete mCone;
 		}
-	}
-
-	const std::string Blizzard::GetName() const
-	{
-		return mName;
 	}
 }

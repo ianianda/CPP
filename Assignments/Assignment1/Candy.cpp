@@ -3,10 +3,9 @@
 
 namespace assignment1
 {
-	Candy::Candy(const char* name, float weight)
+	Candy::Candy(const std::string name, float weight)
 		: Item(name)
 		, mWeight(weight)
-		, mName(name)
 	{
 	}
 
@@ -19,8 +18,4 @@ namespace assignment1
 	{
 	}
 
-	const std::string Candy::GetName() const
-	{
-		return mName; // return cost here
-	}
 }

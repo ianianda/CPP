@@ -3,9 +3,10 @@
 namespace assignment1
 {
 	/* abstract class */
-	Item::Item(const char* name)
+	Item::Item(const std::string name)
+		:mName(name)
 	{
-
+		
 	}
 
 	Item::~Item()
@@ -16,6 +17,6 @@ namespace assignment1
 	/* gets the name of item */
 	const std::string Item::GetName() const
 	{
-		return std::string(); // return name here
+		return mName; // return name here
 	}
 }

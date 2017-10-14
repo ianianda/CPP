@@ -6,9 +6,8 @@
 namespace assignment1
 {
 	IceCream::IceCream(const IceCream& other)
-		: Item(other.mName)
+		: Item(other.GetName())
 		, ounces(other.ounces)
-		, mName(other.mName)
 	{
 		if (other.mCone != NULL)
 		{
@@ -16,11 +15,10 @@ namespace assignment1
 		}
 	}
 
-	IceCream::IceCream(const char* name, unsigned int scoops)
+	IceCream::IceCream(const std::string name, unsigned int scoops)
 		: Item(name)
 		, mCone(NULL)
 		, ounces(scoops * 2)
-		, mName(name)
 	{
 	}
 
@@ -44,10 +42,6 @@ namespace assignment1
 		}
 	}
 
-	const std::string IceCream::GetName() const
-	{
-		return mName; // return cost here
-	}
 
 	IceCream::~IceCream()
 	{
