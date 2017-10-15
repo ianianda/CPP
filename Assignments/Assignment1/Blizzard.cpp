@@ -3,17 +3,6 @@
 
 namespace assignment1
 {
-	Blizzard::Blizzard(const Blizzard& other)
-		: IceCream(other.GetName(), other.mScoops)
-		, mScoops(other.mScoops)
-	{
-		if (other.mCone != NULL)
-		{
-			//allocate memory for deep copy
-			mCone = new Cone(*(other.mCone));
-		}
-	}
-
 	Blizzard::Blizzard(const std::string name, unsigned int scoops)
 		: IceCream(name, scoops)
 		, mScoops(scoops)
