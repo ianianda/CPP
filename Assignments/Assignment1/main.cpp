@@ -21,6 +21,7 @@ int main()
 	icecream->AddCone();
 
 	IceCream* icecream2(icecream);
+	cart.AddItem(blizzard);
 	cart.AddItem(icecream);
 
 	std::cout << cart.RemoveItem(0) << std::endl;

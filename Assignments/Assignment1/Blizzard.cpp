@@ -20,6 +20,7 @@ namespace assignment1
 		//, mScoops(scoops)
 		, mCone(NULL)
 	{
+		mScoops = scoops;
 	}
 
 	unsigned int Blizzard::GetCost() const
