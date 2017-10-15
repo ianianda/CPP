@@ -6,12 +6,13 @@
 namespace assignment1
 {
 	IceCream::IceCream(const IceCream& other)
-		: Item(other.GetName())
-		, ounces(other.ounces)
+		: Item(other)
+		, mCone(NULL)
+		//, ounces(other.ounces)
 	{
 		if (other.mCone != NULL)
 		{
-			mCone = new Cone(*other.mCone);
+			mCone = new Cone();
 			memcpy(mCone, other.mCone, sizeof(mCone));
 		}
 	}
@@ -19,8 +20,9 @@ namespace assignment1
 	IceCream::IceCream(const std::string name, unsigned int scoops)
 		: Item(name)
 		, mCone(NULL)
-		, ounces(scoops * 2)
+		//, ounces(scoops * 2)
 	{
+		ounces = scoops * 2;
 	}
 
 	unsigned int IceCream::GetCost() const
