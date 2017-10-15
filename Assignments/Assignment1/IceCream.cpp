@@ -11,7 +11,7 @@ namespace assignment1
 	{
 		if (other.mCone != NULL)
 		{
-			mCone = new Cone();
+			mCone = new Cone(*other.mCone);
 			memcpy(mCone, other.mCone, sizeof(mCone));
 		}
 	}
