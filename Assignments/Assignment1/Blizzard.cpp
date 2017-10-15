@@ -9,7 +9,6 @@ namespace assignment1
 	{
 		if (other.mCone != NULL)
 		{
-			//allocate memory for deep copy
 			mCone = new Cone(*(other.mCone));
 			memcpy(mCone, other.mCone, sizeof(mCone));
 		}
