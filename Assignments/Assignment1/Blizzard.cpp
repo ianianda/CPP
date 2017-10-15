@@ -4,20 +4,12 @@
 namespace assignment1
 {
 	Blizzard::Blizzard(const Blizzard& other)
-		//: IceCream(other.GetName(), other.mScoops)
-		: IceCream(other) //<- calls the cpy constructor of the IceCream
-		//, mScoops(other.mScoops)
+		: IceCream(other)
 	{
-		//if (other.mCone != NULL)
-	//	{
-		//	mCone = new Cone();
-	//		memcpy(mCone, other.mCone, sizeof(mCone));
-	//	}
 	}
 
 	Blizzard::Blizzard(const std::string name, unsigned int scoops)
 		: IceCream(name, scoops)
-		//, mScoops(scoops)
 		, mCone(NULL)
 	{
 		mScoops = scoops;

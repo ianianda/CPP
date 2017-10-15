@@ -8,7 +8,6 @@ namespace assignment1
 	IceCream::IceCream(const IceCream& other)
 		: Item(other)
 		, mCone(NULL)
-		//, ounces(other.ounces)
 	{
 		if (other.mCone != NULL)
 		{
@@ -20,7 +19,6 @@ namespace assignment1
 	IceCream::IceCream(const std::string name, unsigned int scoops)
 		: Item(name)
 		, mCone(NULL)
-		//, ounces(scoops * 2)
 	{
 		ounces = scoops * 2;
 	}
