@@ -11,8 +11,8 @@
 
 namespace assignment2
 {
-	template <typename K, class V>
-	using MapIterator = typename std::map<K, V>::const_iterator;
+	/*template <typename K, class V>
+	using MapIterator = typename std::map<K, V>::const_iterator;*/
 
 	template <typename K, class V>
 	std::map<K, V> ConvertVectorsToMap(const std::vector<K>& keys, const std::vector<V>& data)
