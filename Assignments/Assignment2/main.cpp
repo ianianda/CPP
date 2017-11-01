@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 
+using namespace assignment2;
+
 int main() {
 	std::vector<int> v1;
 	v1.push_back(1);
@@ -30,11 +32,12 @@ int main() {
 	m2['e'] = 5;
 	m2['f'] = 6;
 
-	//std::map<int, char> m = assignment2::ConvertVectorsToMap(v1, v2);
+	std::map<int, char> m = assignment2::ConvertVectorsToMap(v1, v2);
 	//std::vector<char> keys = assignment2::GetKeys(m1);
 	//std::vector<int> values = assignment2::GetValues(m1);
 	//std::vector<int> reversedV1 = assignment2::Reverse(v1);
     
+	std::vector<int> combinedVector = v1 + v3;
 	//std::vector<int> combinedVector = v1 + v3;
 	//std::vector<int> ioperator = v1 + v3;
 
