@@ -3,12 +3,12 @@
 #include <vector>
 namespace lab5
 {
-	int result = 0;
+	unsigned int result = 0;
 	float avg = 0;
 
 	int Sum(const std::vector<int>& v)
 	{
-		for (int i = 0; i < v.size(); i++)
+		for (unsigned int i = 0; i < v.size(); i++)
 		{
 			result += v.at(i);
 		}
@@ -17,11 +17,18 @@ namespace lab5
 
 	int Min(const std::vector<int>& v)
 	{
-		for (int i = 0; i < v.size(); i++)
+		if (v.size() == 0)
 		{
-			if (result > v.at(i))
+			result = 0;
+		}
+		else
+		{
+			for (unsigned int i = 0; i < v.size(); i++)
 			{
-				result = v.at(i);
+				if (result > v.at(i))
+				{
+					result = v.at(i);
+				}
 			}
 		}
 		return result;
@@ -29,11 +36,18 @@ namespace lab5
 
 	int Max(const std::vector<int>& v)
 	{
-		for (int i = 0; i < v.size(); i++)
+		if (v.size() == 0)
 		{
-			if (result < v.at(i))
+			result = 0;
+		}
+		else
+		{
+			for (unsigned int i = 0; i < v.size(); i++)
 			{
-				result = v.at(i);
+				if (result < v.at(i))
+				{
+					result = v.at(i);
+				}
 			}
 		}
 		return result;
@@ -41,20 +55,25 @@ namespace lab5
 
 	float Average(const std::vector<int>& v)
 	{
-		int i = 0;
+		unsigned int i = 0;
 		result = 0;
-
-		for (i = 0; i < v.size(); i++)
+		if (v.size() == 0)
 		{
-			result += v.at(i);
+			avg = 0;
 		}
-		avg = result / i; // i or i-1
+		else
+		{
+			for (i = 0; i < v.size(); i++)
+			{
+				result += v.at(i);
+			}
+			avg = (float)result / i; // i or i-1
+		}
 		return avg;
 	}
 
 	int NumberWithMaxOccurrence(const std::vector<int>& v)
 	{
-	
 		std::map<int, int> frequencyMap;
 		int maxFrequency = 0;
 		int mostFrequentElement = 0;
