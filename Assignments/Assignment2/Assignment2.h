@@ -91,12 +91,12 @@ namespace assignment2
 
 		for (unsigned i = 0; i < v2.size(); ++i)
 		{
-			copyVector.push_back(v2[i]);
+			copyVector.push_back(v2.at(i));
 		}
 
 		for (unsigned int i = 0; i < v1.size(); i++)
 		{
-			newVector.push_back(v1[i]);
+			newVector.push_back(v1.at(i));
 		}
 
 		for (unsigned int i = 0; i < newVector.size(); i++)
@@ -112,7 +112,7 @@ namespace assignment2
 
 		for (unsigned int i = 0; i < copyVector.size(); i++)
 		{
-			newVector.push_back(copyVector[i]);
+			newVector.push_back(copyVector.at(i));
 		}
 
 		return newVector;
