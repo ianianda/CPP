@@ -83,76 +83,88 @@ namespace assignment2
 		return copyV;
 	}
 
-	/*template <typename T>
+	template <typename T>
 	std::vector<T> operator+(const std::vector<T>& v1, const std::vector<T>& v2)
 	{
 		std::vector<T> newVector;
-		unsigned int maxSize, shortSize = 0;
-		if (v1.size() > v2.size())
+		std::vector<T> copyVector;
+
+		for (unsigned i = 0; i < v2.size(); ++i)
 		{
-			maxSize = v1.size();
-			shortSize = v2.size();
-		}
-		else
-		{
-			maxSize = v2.size();
-			shortSize = v1.size();
+			copyVector.push_back(v2[i]);
 		}
 
 		for (unsigned int i = 0; i < v1.size(); i++)
 		{
 			newVector.push_back(v1[i]);
 		}
-		for (unsigned int i = 0; i < maxSize; i++)
+
+		for (unsigned int i = 0; i < newVector.size(); i++)
 		{
-			for (unsigned int j = 0; j < shortSize; j++)
+			for (unsigned int j = 0; j < copyVector.size(); j++)
 			{
-				if(v1.at(j))
+				if (newVector.at(i) == copyVector.at(j))
+				{
+					copyVector.erase(copyVector.begin() + j);
+				}
 			}
 		}
-		newVector.insert(newVector.end(), v2.begin(), v2.end());
+
+		for (unsigned int i = 0; i < copyVector.size(); i++)
+		{
+			newVector.push_back(copyVector[i]);
+		}
 
 		return newVector;
-	}*/
+	}
 
-	//template <typename K, class V>
-	//std::map<K, V> operator+(const std::map<K, V>& m1, const std::map<K, V>& m2)
-	//{
-	//	std::map<K, V> newMap;
-	//	newMap.insert(m1.begin(), m1.end());
+	template <typename K, class V>
+	std::map<K, V> operator+(const std::map<K, V>& m1, const std::map<K, V>& m2)
+	{
+		std::map<K, V> newMap;
+		std::map<K, V> copyMap;
+		newMap.insert(m1.begin(), m1.end());
+		copyMap.insert(m2.begin(), m2.end());
 
-	//	for (unsigned int i = 0; i < m2.size(); i++)
-	//	{
-	//		for (unsigned int j = 0; j < newMap.size(); j++)
-	//		{
-	//			if (!newMap.find(m2->first))
-	//			{
-	//				newMap.insert(m2.at(i));
-	//			}
-	//		}
-	//	}
-	//	return newMap;
-	//}
+		MapIterator<K, V> it;
+		MapIterator<K, V> ip;
 
-	//template<typename t>
-	//std::ostream& operator<<(std::ostream& os, const std::vector<t>& v)
-	//{
-	//	for (unsigned int i = 0; i < v.size(); i++)
-	//	{
-	//		os << v.at(i) << ", ";
-	//	}
-	//	return os; //return a reference to the ostream object
-	//}
+		for (it = newMap.begin(); it != newMap.end(); it++)
+		{
+			for (ip = copyMap.begin(); ip != copyMap.end(); ip++)
+			{
+				if ((it->first) == (ip->first))
+				{
+					ip = copyMap.erase(ip);
+				}
+			}
+		}
+		newMap.insert(copyMap.begin(), copyMap.end());
 
-	//template <typename K, class V>
-	//std::ostream& operator<<(std::ostream& os, const std::map<K, V>& m)
-	//{
-	//	for (const auto& p : m)
-	//	{
-	//		os << "{ " << p.first << ", ";
-	//		//for(int x: p.second) os<<x<<'';
-	//		os << p.second << " }";
-	//		os << std::endl;
-	//	}
-	//}
+		return copyMap;
+	}
+
+	template<typename t>
+	std::ostream& operator<<(std::ostream& os, const std::vector<t>& v)
+	{
+		os << v.at(0) << "";
+		for (unsigned int i = 1; i < v.size(); i++)
+		{
+			os << ", " << v.at(i);
+		}
+		return os; //return a reference to the ostream object
+	}
+
+	template <typename K, class V>
+	std::ostream& operator<<(std::ostream& os, const std::map<K, V>& m)
+	{
+		for (const auto& p : m)
+		{
+			os << "{ " << p.first << ", ";
+			//for(int x: p.second) os<<x<<'';
+			os << p.second << " }";
+			os << std::endl;
+		}
+		return os;
+	}
 }

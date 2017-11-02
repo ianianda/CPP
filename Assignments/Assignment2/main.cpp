@@ -29,23 +29,18 @@ int main() {
 
 	std::map<char, int> m2;
 	m2['d'] = 4;
-	m2['e'] = 5;
+	m2['a'] = 5;
 	m2['f'] = 6;
 
-	std::map<int, char> m = ConvertVectorsToMap(v1, v2);
-	std::vector<char> keys = GetKeys(m1);
-	std::vector<int> values = GetValues(m1);
-	std::vector<int> reversedV1 = Reverse(v1);
-    
+	//std::map<int, char> m = ConvertVectorsToMap(v1, v2);
+	//std::vector<char> keys = GetKeys(m1);
+	//std::vector<int> values = GetValues(m1);
+	//std::vector<int> reversedV1 = Reverse(v1);
 	//std::vector<int> combinedVector = v1 + v3;
-	//std::vector<int> combinedVector = v1 + v3;
-	//std::vector<int> ioperator = v1 + v3;
-
+	//std::map<char, int> combinedMap = m1 + m2;
 	//std::cout << v1 << std::endl;
-	//std::cout << m1 << std::endl;
 	
-	//std::map<int, int> m = {1,2};
+	std::cout << m1 << std::endl;
 
-	//std::cout << m << std::endl;
 	return 0;
 }
