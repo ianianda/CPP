@@ -81,6 +81,10 @@ namespace assignment2
 		return copyV;
 	}
 }
+
+template <typename K, class V>
+using MapIterator = typename std::map<K, V>::const_iterator;
+
 template <typename T>
 std::vector<T> operator+(const std::vector<T>& v1, const std::vector<T>& v2)
 {
