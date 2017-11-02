@@ -17,13 +17,15 @@ namespace lab5
 
 	int Min(const std::vector<int>& v)
 	{
+		int result = 0;
 		if (v.size() == 0)
 		{
 			result = 0;
 		}
 		else
 		{
-			for (unsigned int i = 0; i < v.size(); i++)
+			result = v.at(0);
+			for (unsigned int i = 1; i < v.size(); i++)
 			{
 				if (result > v.at(i))
 				{
@@ -36,6 +38,7 @@ namespace lab5
 
 	int Max(const std::vector<int>& v)
 	{
+		int result = 0;
 		if (v.size() == 0)
 		{
 			result = 0;
