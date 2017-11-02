@@ -6,7 +6,7 @@ using namespace assignment2;
 
 int main()
 {
-	/*std::vector<int> v1;
+	std::vector<int> v1;
 	v1.push_back(1);
 	v1.push_back(2);
 	v1.push_back(3);
@@ -21,7 +21,7 @@ int main()
 	std::vector<int> v3;
 	v3.push_back(4);
 	v3.push_back(5);
-	v3.push_back(6);*/
+	v3.push_back(6);
 
 	std::map<char, int> m1;
 	m1['a'] = 1;
@@ -34,14 +34,13 @@ int main()
 	m2['a'] = 5;
 	m2['f'] = 6;
 
-	//std::map<int, char> m = ConvertVectorsToMap(v1, v2);
-	//std::vector<char> keys = GetKeys(m1);
-	//std::vector<int> values = GetValues(m1);
-	//std::vector<int> reversedV1 = Reverse(v1);
-	//std::vector<int> combinedVector = v1 + v3;
+	std::map<int, char> m = ConvertVectorsToMap(v1, v2);
+	std::vector<char> keys = GetKeys(m1);
+	std::vector<int> values = GetValues(m1);
+	std::vector<int> reversedV1 = Reverse(v1);
+	std::vector<int> combinedVector = v1 + v3;
 	std::map<char, int> combinedMap = m1 + m2;
-	//std::cout << v1 << std::endl;
-	
+	std::cout << v1 << std::endl;
 	std::cout << m1 << std::endl;
 
 	return 0;
