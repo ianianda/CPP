@@ -143,7 +143,7 @@ std::map<K, V> operator+(const std::map<K, V>& m1, const std::map<K, V>& m2)
 	}
 	newMap.insert(copyMap.begin(), copyMap.end());
 
-	return copyMap;
+	return newMap;
 }
 
 template<typename t>
