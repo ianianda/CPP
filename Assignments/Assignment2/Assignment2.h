@@ -118,53 +118,53 @@ namespace assignment2
 		return newVector;
 	}
 
-	template <typename K, class V>
-	std::map<K, V> operator+(const std::map<K, V>& m1, const std::map<K, V>& m2)
-	{
-		std::map<K, V> newMap;
-		std::map<K, V> copyMap;
-		newMap.insert(m1.begin(), m1.end());
-		copyMap.insert(m2.begin(), m2.end());
+	//template <typename K, class V>
+	//std::map<K, V> operator+(const std::map<K, V>& m1, const std::map<K, V>& m2)
+	//{
+	//	std::map<K, V> newMap;
+	//	std::map<K, V> copyMap;
+	//	newMap.insert(m1.begin(), m1.end());
+	//	copyMap.insert(m2.begin(), m2.end());
 
-		MapIterator<K, V> it;
-		MapIterator<K, V> ip;
+	//	MapIterator<K, V> it;
+	//	MapIterator<K, V> ip;
 
-		for (it = newMap.begin(); it != newMap.end(); it++)
-		{
-			for (ip = copyMap.begin(); ip != copyMap.end(); ip++)
-			{
-				if ((it->first) == (ip->first))
-				{
-					ip = copyMap.erase(ip);
-				}
-			}
-		}
-		newMap.insert(copyMap.begin(), copyMap.end());
+	//	for (it = newMap.begin(); it != newMap.end(); it++)
+	//	{
+	//		for (ip = copyMap.begin(); ip != copyMap.end(); ip++)
+	//		{
+	//			if ((it->first) == (ip->first))
+	//			{
+	//				ip = copyMap.erase(ip);
+	//			}
+	//		}
+	//	}
+	//	newMap.insert(copyMap.begin(), copyMap.end());
 
-		return copyMap;
-	}
+	//	return copyMap;
+	//}
 
-	template<typename t>
-	std::ostream& operator<<(std::ostream& os, const std::vector<t>& v)
-	{
-		os << v.at(0) << "";
-		for (unsigned int i = 1; i < v.size(); i++)
-		{
-			os << ", " << v.at(i);
-		}
-		return os; //return a reference to the ostream object
-	}
-
-	template <typename K, class V>
-	std::ostream& operator<<(std::ostream& os, const std::map<K, V>& m)
-	{
-		for (const auto& p : m)
-		{
-			os << "{ " << p.first << ", ";
-			//for(int x: p.second) os<<x<<'';
-			os << p.second << " }";
-			os << std::endl;
-		}
-		return os;
-	}
+	//template<typename t>
+	//std::ostream& operator<<(std::ostream& os, const std::vector<t>& v)
+	//{
+	//	os << v.at(0) << "";
+	//	for (unsigned int i = 1; i < v.size(); i++)
+	//	{
+	//		os << ", " << v.at(i);
+	//	}
+	//	return os; //return a reference to the ostream object
+	//}
+	
+	//template <typename K, class V>
+	//std::ostream& operator<<(std::ostream& os, const std::map<K, V>& m)
+	//{
+	//	for (const auto& p : m)
+	//	{
+	//		os << "{ " << p.first << ", ";
+	//		//for(int x: p.second) os<<x<<'';
+	//		os << p.second << " }";
+	//		os << std::endl;
+	//	}
+	//	return os;
+	//}
 }
