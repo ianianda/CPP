@@ -59,6 +59,10 @@ namespace lab6
 		{
 			return -1;
 		}
+		else
+		{
+			return i;
+		}
 	}
 
 	template<class T, size_t N>
@@ -107,7 +111,8 @@ namespace lab6
 		{
 			mArray[i] = mArray[i + 1];
 		}
-		mArray[N - 1] = 0;
+		mArray[N - 1] = (int)nullptr;
+		mSize--;
 		return true;
 	}
 }
