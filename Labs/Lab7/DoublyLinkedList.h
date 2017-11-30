@@ -41,19 +41,20 @@ namespace lab7
 		if (mRoot == nullptr)
 		{
 			node_ptr = std::make_shared<Node<T>>(std::move(data));
-			mRoot = node_ptr;
+			//mRoot = node_ptr;
+			//node_ptr = nullptr;
 			length++;
 		}
 		else //mRoot != nullptr
 		{
-			do
+			/*do
 			{
 				node_ptr = node_ptr->Next;
 			}
-			while (node_ptr->Next != nullptr);
+			while (node_ptr->Next != nullptr);*/
 
 			node_ptr = std::make_shared<Node<T>>(std::move(data));
-			mRoot = node_ptr;
+			//mRoot = node_ptr;
 			length++;
 		}
 	}
@@ -86,7 +87,7 @@ namespace lab7
 			{
 				Insert(std::move(data));
 			}
-			else// index < length
+			else // index < length
 			{
 				temp = mRoot;
 				do
@@ -153,7 +154,7 @@ namespace lab7
 				temp = temp->Next;
 			}
 		}
-		while (temp != nullptr);
+		while (temp->Next != nullptr);
 		return false;
 	}
 
