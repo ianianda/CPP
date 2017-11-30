@@ -41,6 +41,7 @@ namespace lab7
 		if (mRoot == nullptr)
 		{
 			node_ptr = std::make_shared<Node<T>>(std::move(data));
+			mRoot = node_ptr;
 		}
 		else //mRoot != nullptr
 		{
@@ -64,7 +65,7 @@ namespace lab7
 		// list is empty
 		if (mRoot == nullptr)
 		{
-			mRoot = make_shared<Node<T>>(std::move(data));
+			mRoot = std::make_shared<Node<T>>(std::move(data));
 			length++;
 		}
 		else // list is not empty
@@ -72,7 +73,7 @@ namespace lab7
 			if (index == 0)
 			{
 				mRoot->Previous.lock();
-				temp = make_shared<Node<T>>(std::move(data));
+				temp = std::make_shared<Node<T>>(std::move(data));
 				temp->Next = mRoot;
 				mRoot->Previous = temp;
 				mRoot = temp;
@@ -93,7 +94,7 @@ namespace lab7
 					temp = temp->Next;
 				} while (i < index);
 
-				temp = make_shared<Node<T>>(std::move(data));
+				temp = std::make_shared<Node<T>>(std::move(data));
 				length++;
 			}
 		}
