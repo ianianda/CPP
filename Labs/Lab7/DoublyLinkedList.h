@@ -71,9 +71,11 @@ namespace lab7
 		{
 			if (index == 0)
 			{
-				temp = mRoot;
-				mRoot->Next = temp;
-				temp->Previous = mRoot;
+				mRoot->Previous.lock();
+				temp = make_shared<Node<T>>(std::move(data));
+				temp->Next = mRoot;
+				mRoot->Previous = temp;
+				mRoot = temp;
 				length++;
 			}
 			else if (index >= length)
@@ -82,15 +84,16 @@ namespace lab7
 			}
 			else// index < length
 			{
+				temp = mRoot;
 				do
 				{
 					//temp = mRoot->Previous.lock();
 
 					i++;
-					mRoot = mRoot->Next;
+					temp = temp->Next;
 				} while (i < index);
 
-				mRoot = make_shared<Node<T>>(std::move(data));
+				temp = make_shared<Node<T>>(std::move(data));
 				length++;
 			}
 		}
@@ -104,17 +107,23 @@ namespace lab7
 		{
 			if (*(mRoot->Data) == data) // delete head
 			{
-				mRoot = nullptr;
+				temp = mRoot;
 				mRoot = mRoot->Next;
+				temp = nullptr;
+				length--;
 				return true;
 			}
 			else // head is not the deleted one
 			{
-				while (mRoot->Next != nullptr)
+				while (mRoot != nullptr)
 				{
 					temp = mRoot->Next;
 					if (*(temp->Data) == data)
 					{
+						temp = mRoot;
+						mRoot = mRoot->Next;
+						temp = nullptr;
+						length--;
 						return true;
 					}
 				}
@@ -130,7 +139,7 @@ namespace lab7
 		temp = mRoot;
 		do
 		{
-			if (temp->Data == data)
+			if (*(temp->Data) == data)
 			{
 				return true;
 			}
