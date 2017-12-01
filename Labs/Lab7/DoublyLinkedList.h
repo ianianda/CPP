@@ -142,18 +142,25 @@ namespace lab7
 	template<typename T>
 	bool DoublyLinkedList<T>::Search(const T& data) const
 	{
+		if (mRoot == nullptr)
+		{
+			return false;
+		}
+
 		std::shared_ptr<Node<T>> temp;
 		temp = mRoot;
+
 		do
 		{
 			if (*(temp->Data) == data)
 			{
 				return true;
 			}
-			else
+			else if (temp->Next == nullptr)
 			{
-				temp = temp->Next;
+				return false;
 			}
+			temp = temp->Next;
 		}
 		while (temp->Next != nullptr);
 		return false;
@@ -162,12 +169,17 @@ namespace lab7
 	template<typename T>
 	std::shared_ptr<Node<T>> DoublyLinkedList<T>::operator[](unsigned int index) const
 	{
-		std::shared_ptr<Node<T>> temp;
+		if (mRoot == nullptr)
+		{
+			return nullptr;
+		}
+
+		std::shared_ptr<Node<T>> temp = mRoot;
 		if (index < length)
 		{
 			for (unsigned int i = 0; i < index; i++)
 			{
-				temp = mRoot->Next;
+				temp = temp->Next;
 			}
 			return temp;
 		}
