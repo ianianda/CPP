@@ -36,7 +36,6 @@ namespace lab7
 	void DoublyLinkedList<T>::Insert(std::unique_ptr<T> data)
 	{
 		std::shared_ptr<Node<T>> node_ptr = mRoot;
-		//std::shared_ptr<Node<T>> temp;
 		if (mRoot == nullptr)
 		{
 			mRoot = std::make_shared<Node<T>>(std::move(data));
@@ -47,6 +46,7 @@ namespace lab7
 			if (node_ptr->Next == nullptr)
 			{
 				mRoot->Next = std::make_shared<Node<T>>(std::move(data));
+				mRoot->Next->Previous = mRoot;
 				length++;
 			}
 			else
@@ -60,7 +60,6 @@ namespace lab7
 				node_ptr->Next->Previous = node_ptr;
 				length++;
 			}
-
 		}
 	}
 
@@ -68,8 +67,7 @@ namespace lab7
 	void DoublyLinkedList<T>::Insert(std::unique_ptr<T> data, unsigned int index)
 	{
 		std::shared_ptr<Node<T>> temp;
-		std::shared_ptr<Node<T>> temp2;
-		std::shared_ptr<Node<T>> temp3;
+
 		unsigned int i = 0;
 
 		// list is empty
@@ -102,13 +100,18 @@ namespace lab7
 				}
 				while (i < index);
 
+				std::shared_ptr<Node<T>> addPos;
+				std::shared_ptr<Node<T>> addPosPrev;
+				std::shared_ptr<Node<T>> newNode;
 
-				temp2 = std::make_shared<Node<T>>(std::move(data));
-				temp3 = temp->Previous.lock();
-				temp3->Next = temp2;
-				temp2->Previous = temp3;
-				temp2->Next = temp;
-				temp->Previous = temp2;
+				newNode = std::make_shared<Node<T>>(std::move(data));
+				addPosPrev = temp->Previous.lock();
+				
+				addPosPrev->Next = newNode;
+				newNode->Previous = addPosPrev;
+				newNode->Next = temp;
+				temp->Previous = newNode;
+
 				length++;
 			}
 		}
