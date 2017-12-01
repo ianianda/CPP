@@ -143,12 +143,12 @@ namespace lab7
 					if (temp->Next != nullptr)
 					{
 						temp = temp->Next;
-						if ((*(temp->Data) == data) && (temp != nullptr))
+						if ((*(temp->Data) == data))
 						{
 							if (temp->Next != nullptr)
 							{
 								temp->Previous.lock()->Next = temp->Next;
-								temp->Next->Previous = temp->Previous;
+								temp->Next->Previous = temp->Previous.lock();
 								length--;
 								return true;
 							}
