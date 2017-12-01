@@ -134,30 +134,43 @@ namespace lab7
 					length--;
 					return true;
 				}
-
 			}
 			else // head is not the deleted one
 			{
 				temp = mRoot;
 				while (temp != nullptr)
 				{
-					temp = temp->Next;
-					if ((*(temp->Data) == data) && (temp != nullptr))
+					if (temp->Next != nullptr)
 					{
-						if (temp->Next != nullptr)
+						temp = temp->Next;
+						if ((*(temp->Data) == data) && (temp != nullptr))
 						{
-							temp->Previous.lock()->Next = temp->Next;
-							temp->Next->Previous = temp->Previous;
-							length--;
-							return true;
+							if (temp->Next != nullptr)
+							{
+								temp->Previous.lock()->Next = temp->Next;
+								temp->Next->Previous = temp->Previous;
+								length--;
+								return true;
+							}
+							else
+							{
+								temp->Previous.lock()->Next = nullptr;
+								length--;
+								return true;
+							}
 						}
-						else
+					}
+					else //temp->next == null
+					{
+						if ((*(temp->Data) == data) && (temp != nullptr))
 						{
 							temp->Previous.lock()->Next = nullptr;
 							length--;
 							return true;
 						}
+						return false;
 					}
+
 				}
 			}
 		}

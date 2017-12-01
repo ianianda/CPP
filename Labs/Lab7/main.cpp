@@ -13,6 +13,11 @@ int main()
 	list.Insert(std::make_unique<int>(4));
 
 	list.Delete(3);
+	list.Delete(3);
+	list.Delete(1);
+	list.Delete(2);
+	list.Delete(4);
+
 	list.Insert(std::make_unique<int>(1), 2);
 
 	//bool bExists = list.Search(0);
