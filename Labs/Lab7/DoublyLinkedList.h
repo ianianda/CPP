@@ -106,7 +106,6 @@ namespace lab7
 
 				newNode = std::make_shared<Node<T>>(std::move(data));
 				addPosPrev = temp->Previous.lock();
-				
 				addPosPrev->Next = newNode;
 				newNode->Previous = addPosPrev;
 				newNode->Next = temp;
