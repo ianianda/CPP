@@ -54,7 +54,8 @@ namespace lab7
 				do
 				{
 					node_ptr = node_ptr->Next;
-				} while (node_ptr->Next != nullptr);
+				}
+				while (node_ptr->Next != nullptr);
 				node_ptr->Next = std::make_shared<Node<T>>(std::move(data));
 				node_ptr->Next->Previous = node_ptr;
 				length++;
@@ -98,7 +99,8 @@ namespace lab7
 				{
 					i++;
 					temp = temp->Next;
-				} while (i < index);
+				}
+				while (i < index);
 
 
 				temp2 = std::make_shared<Node<T>>(std::move(data));
@@ -162,6 +164,7 @@ namespace lab7
 				}
 			}
 		}
+		return false;
 	}
 
 	template<typename T>
@@ -186,7 +189,8 @@ namespace lab7
 				return false;
 			}
 			temp = temp->Next;
-		} while (temp->Next != nullptr);
+		}
+		while (temp->Next != nullptr);
 		return false;
 	}
 
