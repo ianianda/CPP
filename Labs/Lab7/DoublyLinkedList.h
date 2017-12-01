@@ -44,14 +44,22 @@ namespace lab7
 		}
 		else //mRoot != nullptr
 		{
-			do
+			if (node_ptr->Next == nullptr)
 			{
-				node_ptr = node_ptr->Next;
-			} while (node_ptr->Next != nullptr);
+				mRoot->Next = std::make_shared<Node<T>>(std::move(data));
+				length++;
+			}
+			else
+			{
+				do
+				{
+					node_ptr = node_ptr->Next;
+				} while (node_ptr->Next != nullptr);
+				node_ptr->Next = std::make_shared<Node<T>>(std::move(data));
+				node_ptr->Next->Previous = node_ptr;
+				length++;
+			}
 
-			node_ptr->Next = std::make_shared<Node<T>>(std::move(data));
-			node_ptr->Next->Previous = node_ptr;
-			length++;
 		}
 	}
 
@@ -126,7 +134,7 @@ namespace lab7
 					length--;
 					return true;
 				}
-				
+
 			}
 			else // head is not the deleted one
 			{
@@ -134,7 +142,7 @@ namespace lab7
 				while (temp != nullptr)
 				{
 					temp = temp->Next;
-					if (*(temp->Data) == data)
+					if ((*(temp->Data) == data) && (temp != nullptr))
 					{
 						temp->Previous.lock()->Next = temp->Next;
 						temp->Next->Previous = temp->Previous;

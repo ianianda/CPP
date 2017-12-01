@@ -13,7 +13,7 @@ int main()
 	list.Insert(std::make_unique<int>(4));
 
 	list.Delete(3);
-	//list.Insert(std::make_unique<int>(1), 2);
+	list.Insert(std::make_unique<int>(1), 2);
 
 	//bool bExists = list.Search(0);
 	//unsigned int size = list.GetLength();
