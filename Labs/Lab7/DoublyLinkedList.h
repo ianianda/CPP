@@ -47,8 +47,7 @@ namespace lab7
 			do
 			{
 				node_ptr = node_ptr->Next;
-			}
-			while (node_ptr->Next != nullptr);
+			} while (node_ptr->Next != nullptr);
 
 			node_ptr->Next = std::make_shared<Node<T>>(std::move(data));
 			node_ptr->Next->Previous = node_ptr;
@@ -91,10 +90,9 @@ namespace lab7
 				{
 					i++;
 					temp = temp->Next;
-				}
-				while (i < index);
-				
-				
+				} while (i < index);
+
+
 				temp2 = std::make_shared<Node<T>>(std::move(data));
 				temp3 = temp->Previous.lock();
 				temp3->Next = temp2;
@@ -115,21 +113,31 @@ namespace lab7
 			if (*(mRoot->Data) == data) // delete head
 			{
 				temp = mRoot;
-				mRoot = mRoot->Next;
-				temp = nullptr;
-				length--;
-				return true;
+				if (mRoot->Next != nullptr)
+				{
+					mRoot = mRoot->Next;
+					temp = nullptr;
+					length--;
+					return true;
+				}
+				else
+				{
+					mRoot = nullptr;
+					length--;
+					return true;
+				}
+				
 			}
 			else // head is not the deleted one
 			{
-				while (mRoot != nullptr)
+				temp = mRoot;
+				while (temp != nullptr)
 				{
-					temp = mRoot->Next;
+					temp = temp->Next;
 					if (*(temp->Data) == data)
 					{
-						temp = mRoot;
-						mRoot = mRoot->Next;
-						temp = nullptr;
+						temp->Previous.lock()->Next = temp->Next;
+						temp->Next->Previous = temp->Previous;
 						length--;
 						return true;
 					}
@@ -161,8 +169,7 @@ namespace lab7
 				return false;
 			}
 			temp = temp->Next;
-		}
-		while (temp->Next != nullptr);
+		} while (temp->Next != nullptr);
 		return false;
 	}
 
