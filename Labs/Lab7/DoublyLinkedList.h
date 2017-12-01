@@ -63,7 +63,8 @@ namespace lab7
 	void DoublyLinkedList<T>::Insert(std::unique_ptr<T> data, unsigned int index)
 	{
 		std::shared_ptr<Node<T>> temp;
-		std::shared_ptr<Node<T>> forWeak;
+		std::shared_ptr<Node<T>> temp2;
+		std::shared_ptr<Node<T>> temp3;
 		unsigned int i = 0;
 
 		// list is empty
@@ -90,14 +91,19 @@ namespace lab7
 				temp = mRoot;
 				do
 				{
-					//temp = mRoot->Previous.lock();
 					i++;
 					temp = temp->Next;
 				}
 				while (i < index);
+				
+				temp2 = std::make_shared<Node<T>>(std::move(data));
+				temp2->Next = temp;
+				temp->Previous = temp2;
 
-				temp = std::make_shared<Node<T>>(std::move(data));
-				mRoot = temp;
+				temp3 = temp->Previous.lock();
+				temp3->Next = temp2;
+				temp2->Previous = temp3;
+
 				length++;
 			}
 		}
