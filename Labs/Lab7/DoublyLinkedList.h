@@ -36,13 +36,11 @@ namespace lab7
 	void DoublyLinkedList<T>::Insert(std::unique_ptr<T> data)
 	{
 		std::shared_ptr<Node<T>> node_ptr = mRoot;
-		//node_ptr->Next = nullptr;
-
+		
 		if (mRoot == nullptr)
 		{
 			node_ptr = std::make_shared<Node<T>>(std::move(data));
-			//mRoot = node_ptr;
-			//node_ptr = nullptr;
+			mRoot = node_ptr;
 			length++;
 		}
 		else //mRoot != nullptr
@@ -54,7 +52,7 @@ namespace lab7
 			while (node_ptr->Next != nullptr);
 
 			node_ptr = std::make_shared<Node<T>>(std::move(data));
-			//mRoot = node_ptr;
+			mRoot = node_ptr;
 			length++;
 		}
 	}
@@ -80,6 +78,7 @@ namespace lab7
 				temp = std::make_shared<Node<T>>(std::move(data));
 				mRoot->Previous = temp;
 				temp->Next = mRoot;
+				mRoot = temp;
 				length++;
 			}
 			else if (index >= length)
@@ -104,6 +103,7 @@ namespace lab7
 				temp3->Next = temp2;
 				temp2->Previous = temp3;
 
+				mRoot = temp3;
 				length++;
 			}
 		}
