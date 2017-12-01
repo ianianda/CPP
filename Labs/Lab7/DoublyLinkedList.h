@@ -144,10 +144,19 @@ namespace lab7
 					temp = temp->Next;
 					if ((*(temp->Data) == data) && (temp != nullptr))
 					{
-						temp->Previous.lock()->Next = temp->Next;
-						temp->Next->Previous = temp->Previous;
-						length--;
-						return true;
+						if (temp->Next != nullptr)
+						{
+							temp->Previous.lock()->Next = temp->Next;
+							temp->Next->Previous = temp->Previous;
+							length--;
+							return true;
+						}
+						else
+						{
+							temp->Previous.lock()->Next = nullptr;
+							length--;
+							return true;
+						}
 					}
 				}
 			}
