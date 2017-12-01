@@ -199,7 +199,8 @@ namespace lab7
 				return false;
 			}
 			temp = temp->Next;
-		} while (temp->Next != nullptr);
+		}
+		while (temp->Next != nullptr);
 		return false;
 	}
 

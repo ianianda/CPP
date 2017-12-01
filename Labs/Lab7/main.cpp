@@ -11,12 +11,15 @@ int main()
 	list.Insert(std::make_unique<int>(2));
 	list.Insert(std::make_unique<int>(3));
 	list.Insert(std::make_unique<int>(4));
-
-	list.Delete(3);
-	list.Delete(3);
-	list.Delete(1);
-	list.Delete(2);
-	list.Delete(4);
+	list.Insert(std::make_unique<int>(5));
+	list.Insert(std::make_unique<int>(6));
+	bool flag;
+	flag = list.Delete(1);
+	flag = list.Delete(2);
+	flag = list.Delete(3);
+	flag = list.Delete(4);
+	flag = list.Delete(5);
+	flag = list.Delete(6);
 
 	list.Insert(std::make_unique<int>(1), 2);
 
