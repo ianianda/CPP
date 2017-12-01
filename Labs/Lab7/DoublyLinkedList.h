@@ -116,65 +116,52 @@ namespace lab7
 	bool DoublyLinkedList<T>::Delete(const T& data)
 	{
 		std::shared_ptr<Node<T>> temp;
-		if (mRoot != nullptr)
+		std::shared_ptr<Node<T>> temp2;
+		if (mRoot == nullptr) // list is empty
 		{
-			if (*(mRoot->Data) == data) // delete head
+			return false;
+		}
+		else if (mRoot != nullptr) // list is not empty
+		{
+			temp = mRoot;
+			while (temp != nullptr)
 			{
-				temp = mRoot;
-				if (mRoot->Next != nullptr)
+				if (*(temp->Data) == data)
 				{
-					mRoot = mRoot->Next;
-					temp = nullptr;
-					length--;
-					return true;
+					if ((temp->Previous.lock() == nullptr) && (temp->Next == nullptr)) // data == head
+					{
+						mRoot = nullptr;
+						length--;
+						return true;
+					}
+					else if ((temp->Previous.lock() == nullptr) && (temp->Next != nullptr))
+					{
+						mRoot = temp->Next;
+						length--;
+						return true;
+					}
+					else if (((temp->Previous.lock()) != nullptr) && ((temp->Next) != nullptr))
+					{
+						temp2 = temp->Previous.lock();
+						temp2->Next = temp->Next;
+						temp->Next->Previous = temp2;
+						length--;
+						return true;
+					}
 				}
-				else
-				{
-					mRoot = nullptr;
-					length--;
-					return true;
-				}
-			}
-			else // head is not the deleted one
-			{
-				temp = mRoot;
-				while (temp != nullptr)
+				else if (*(temp->Data) != data)
 				{
 					if (temp->Next != nullptr)
 					{
 						temp = temp->Next;
-						if ((*(temp->Data) == data))
-						{
-							if (temp->Next != nullptr)
-							{
-								temp->Previous.lock()->Next = temp->Next;
-								temp->Next->Previous = temp->Previous.lock();
-								length--;
-								return true;
-							}
-							else
-							{
-								temp->Previous.lock()->Next = nullptr;
-								length--;
-								return true;
-							}
-						}
 					}
-					else //temp->next == null
+					else if (temp->Next == nullptr)
 					{
-						if ((*(temp->Data) == data) && (temp != nullptr))
-						{
-							temp->Previous.lock()->Next = nullptr;
-							length--;
-							return true;
-						}
 						return false;
 					}
-
 				}
 			}
 		}
-		return false; //list does not have any node.
 	}
 
 	template<typename T>
@@ -199,8 +186,7 @@ namespace lab7
 				return false;
 			}
 			temp = temp->Next;
-		}
-		while (temp->Next != nullptr);
+		} while (temp->Next != nullptr);
 		return false;
 	}
 

@@ -19,7 +19,7 @@ int main()
 	flag = list.Delete(3);
 	flag = list.Delete(4);
 	flag = list.Delete(5);
-	flag = list.Delete(6);
+	flag = list.Delete(9);
 
 	list.Insert(std::make_unique<int>(1), 2);
 
