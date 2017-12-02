@@ -46,6 +46,7 @@ namespace lab7
 			if (node_ptr->Next == nullptr)
 			{
 				mRoot->Next = std::make_shared<Node<T>>(std::move(data));
+				mRoot->Next->Previous = mRoot;
 				length++;
 			}
 			else
