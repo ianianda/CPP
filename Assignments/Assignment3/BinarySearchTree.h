@@ -138,72 +138,7 @@ namespace assignment3
 	bool BinarySearchTree<T>::Delete(const T& data)
 	{
 		bool bSearched = Search(data);
-		if (bSearched == true)
-		{
-			std::shared_ptr<TreeNode<T>> target;
-			target = mRoot;
-			while (target != nullptr)
-			{
-				if (*(target->Data) == data)
-				{
-					if ((target->Left == nullptr) && (target->Right == nullptr)) // has no child.
-					{
-						target = nullptr;
-					}
-					else if ((target->Left != nullptr) && (target->Right != nullptr)) //has two children.
-					{
-						if (target->Right->Left != nullptr && target->Right->Right != nullptr) // has two children.
-						{
-
-						}
-						else if (target->Right->Left != nullptr && target->Right->Right != nullptr) // has 0 child.
-						{
-
-						}
-						else // has 1 child.
-						{
-
-						}
-					}
-					else //has a child.
-					{
-						if (target->Left != nullptr)
-						{
-							if (target->Parent.lock()->Left == target)
-							{
-								target->Parent.lock()->Left == target->Left;
-							}
-							else if (target->Parent.lock()->Right == target)
-							{
-								target->Parent.lock()->Right == target->Left;
-							}
-						}
-						else if (target->Right != nullptr)
-						{
-							if (target->Parent.lock()->Left == target)
-							{
-								target->Parent.lock()->Left == target->Right;
-							}
-							else if (target->Parent.lock()->Right == target)
-							{
-								target->Parent.lock()->Right == target->Right;
-							}
-						}
-					}
-				}
-				else if (*(target->Data) != data)
-				{
-
-				}
-			}
-
-			return true;
-		}
-		else if (bSearched == false)
-		{
-			return false;
-		}
-		return false;
+		return bSearched;
 	}
 
 
