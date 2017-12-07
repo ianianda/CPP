@@ -10,7 +10,6 @@ namespace lab8
 		Storage(const Storage& other);
 		Storage(Storage&& other);
 
-
 		Storage& operator=(Storage&& other);
 
 		const T* GetData() const;
@@ -74,6 +73,6 @@ namespace lab8
 	template<typename T>
 	Storage<T>::~Storage()
 	{
-		delete mData;
+		delete[] mData;
 	}
 }
