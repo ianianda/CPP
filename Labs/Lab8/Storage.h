@@ -33,7 +33,7 @@ namespace lab8
 	Storage<T>::Storage(const Storage& other)
 	{
 		mLength = other.mLength;
-		mData = new T(other.mData);
+		mData = new T(*other.mData);
 	}
 
 	template<typename T>
@@ -46,7 +46,7 @@ namespace lab8
 	}
 
 	template<typename T>
-	Storage& Storage<T>::operator=(Storage&& other)
+	Storage<T>& Storage<T>::operator=(Storage<T>&& other)
 	{//??????????????????????????????????????????
 		if (this != &other)
 		{
@@ -60,7 +60,7 @@ namespace lab8
 	}
 
 	template<typename T>
-	const Storage<T>::T* GetData() const
+	const T* Storage<T>::GetData() const
 	{
 		return mData;
 	}
@@ -72,7 +72,7 @@ namespace lab8
 	}
 
 	template<typename T>
-	virtual Storage<T>::~Storage()
+	Storage<T>::~Storage()
 	{
 		delete mData;
 	}
